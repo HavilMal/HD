@@ -1,0 +1,88 @@
+@startuml
+' Ustawienia stylów dla diagramu klas
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+hide circle
+
+' ===================================
+' DEFINICJE KLAS I ATRYBUTÓW
+' ===================================
+
+class Szpital {
+  - Nazwa : String
+  - Adres : String
+  - KodPocztowy : String
+  - NumerTelefonu : String
+  - NIP : String
+  - KRS : String
+  - Regon : String
+}
+
+class Oddział {
+  - Nazwa : String
+  - liczbaŁóżek : Integer
+}
+
+class Lekarz {
+  - Imię : String
+  - Nazwisko : String
+  - PESEL : String
+  - NazwaSpecjalizacji : String
+  - KodSpecjalizacji : String
+  - NPWZ : String
+  - DataUrodzenia : Date
+  - DataZatrudnienia : Date
+  - Adres : String
+  - NumerTelefonu : String
+}
+
+class Pacjent {
+  - Imię : String
+  - Nazwisko : String
+  - PESEL : String
+  - DataUrodzenia : Date
+  - Adres : String
+  - NumerTelefonu : String
+  - Płeć : String
+}
+
+class Choroba {
+  - Nazwa : String
+  - ICD10 : String
+  - Opis : String
+}
+
+class Specjalizacja {
+  - kodSpecjalizacji : String
+  - nazwaSpecjalizacji : String
+}
+
+class Diagnoza {
+  - dataIGodzinaDiagnozy : DateTime
+  - wynikBadania : String
+  - zalecenia : String
+}
+
+class Przyjęcie {
+  - dataPrzyjęcia : Date
+}
+
+' ===================================
+' RELACJE I KROTNOŚCI (Brak nawigowalności)
+' ===================================
+
+Szpital "1" *-- "1..*" Oddział : zawiera
+Oddział "*" -- "1" Specjalizacja : posiada profil
+Lekarz "*" -- "1" Specjalizacja : ma kwalifikacje
+Lekarz "*" -- "*" Oddział : przypisany do
+
+Diagnoza "*" -- "1" Lekarz : wystawiona przez
+Diagnoza "*" -- "1" Pacjent : dotyczy
+Diagnoza "*" -- "1" Choroba : rozpoznaje
+
+' Klasa asocjacyjna Przyjęcie
+Pacjent "*" -- "*" Oddział : pobyt
+(Pacjent, Oddział) .. Przyjęcie
+
+@enduml

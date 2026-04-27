@@ -1,0 +1,92 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{041C8AD8-25D9-0215-4A41-C397F812B162}|Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe.dwproj|C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\INternetSales.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{041C8AD8-25D9-0215-4A41-C397F812B162}|Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe.dwproj|solutionrelative:Lab7 - modele wielowymairowe\\INternetSales.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{041C8AD8-25D9-0215-4A41-C397F812B162}|Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe.dwproj|C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\Dim Product.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{041C8AD8-25D9-0215-4A41-C397F812B162}|Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe.dwproj|solutionrelative:Lab7 - modele wielowymairowe\\Dim Product.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{041C8AD8-25D9-0215-4A41-C397F812B162}|Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe.dwproj|C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\Klient.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{041C8AD8-25D9-0215-4A41-C397F812B162}|Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe.dwproj|solutionrelative:Lab7 - modele wielowymairowe\\Klient.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{041C8AD8-25D9-0215-4A41-C397F812B162}|Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe.dwproj|C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\DW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{041C8AD8-25D9-0215-4A41-C397F812B162}|Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe.dwproj|solutionrelative:Lab7 - modele wielowymairowe\\DW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "InternetSales.cube [Design]",
+              "DocumentMoniker": "C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\INternetSales.cube",
+              "RelativeDocumentMoniker": "Lab7 - modele wielowymairowe\\INternetSales.cube",
+              "ToolTip": "C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\INternetSales.cube [Design]",
+              "RelativeToolTip": "Lab7 - modele wielowymairowe\\INternetSales.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-24T12:33:20.846Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dim Product.dim [Design]",
+              "DocumentMoniker": "C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\Dim Product.dim",
+              "RelativeDocumentMoniker": "Lab7 - modele wielowymairowe\\Dim Product.dim",
+              "ToolTip": "C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\Dim Product.dim [Design]",
+              "RelativeToolTip": "Lab7 - modele wielowymairowe\\Dim Product.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-24T12:25:35.528Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Klient.dim [Design]",
+              "DocumentMoniker": "C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\Klient.dim",
+              "RelativeDocumentMoniker": "Lab7 - modele wielowymairowe\\Klient.dim",
+              "ToolTip": "C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\Klient.dim [Design]",
+              "RelativeToolTip": "Lab7 - modele wielowymairowe\\Klient.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-24T11:58:08.824Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DW.dsv [Design]",
+              "DocumentMoniker": "C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\DW.dsv",
+              "RelativeDocumentMoniker": "Lab7 - modele wielowymairowe\\DW.dsv",
+              "ToolTip": "C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\DW.dsv [Design]",
+              "RelativeToolTip": "Lab7 - modele wielowymairowe\\DW.dsv [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-24T11:47:22.36Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
