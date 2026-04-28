@@ -1,0 +1,3003 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{6769C091-088B-4068-98B5-EC3B49762F01}" Name="localhost.Bikeshare">
+      <DtsConnectionManagerID>localhost.Bikeshare</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{D4F74341-D09B-4033-9698-4406E9C98470}" Name="Profil Częstotliwości Użytkowania.xml">
+      <DtsConnectionManagerID>Profil Częstotliwości Użytkowania.xml</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{38CAD5C0-D906-44BD-8977-D889277FCC0B}" Name="Profil Pogody.xml">
+      <DtsConnectionManagerID>Profil Pogody.xml</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{3956B539-ADCC-4ED6-B300-D6049E4BBCBF}" Name="Profil Stacji.xml">
+      <DtsConnectionManagerID>Profil Stacji.xml</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{628C0F2D-6271-42F0-BC48-18C61D34D5CE}" Name="Profil Wypożyczeń">
+      <DtsConnectionManagerID>Profil Wypożyczeń</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{7B19B3C7-D2EF-4EEF-B67B-965996DD94A6}" Name="Profil Wypożyczeń.xml">
+      <DtsConnectionManagerID>Profil Wypożyczeń.xml</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table Schema="dbo" Table="usage_frequency" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table Schema="dbo" Table="usage_frequency" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table Schema="dbo" Table="usage_frequency" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table Schema="dbo" Table="usage_frequency" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table Schema="dbo" Table="usage_frequency" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="usage_frequency" RowCount="-1" />
+        <Column Name="date" SqlDbType="Date" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="usage_frequency" RowCount="-1" />
+        <Column Name="station_name" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="usage_frequency" RowCount="-1" />
+        <Column Name="pickup_counts" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="usage_frequency" RowCount="-1" />
+        <Column Name="dropoff_counts" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="usage_frequency" RowCount="873318" />
+        <Column Name="date" SqlDbType="Date" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <MinValue>2020-05-01T00:00:00.0000000</MinValue>
+        <MaxValue>2024-08-31T00:00:00.0000000</MaxValue>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="usage_frequency" RowCount="873318" />
+        <Column Name="pickup_counts" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>444</MaxValue>
+        <Mean>16.7596660094032</Mean>
+        <StdDev>21.9865728731442</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="usage_frequency" RowCount="873318" />
+        <Column Name="station_name" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>10</MinLength>
+        <MaxLength>61</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>60334</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>38</Length>
+            <Count>7122</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>18</Length>
+            <Count>16942</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>43</Length>
+            <Count>2347</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>33</Length>
+            <Count>12887</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>45</Length>
+            <Count>3310</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>32</Length>
+            <Count>22516</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>47</Length>
+            <Count>3031</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>15</Length>
+            <Count>6953</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>34</Length>
+            <Count>13083</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>50</Length>
+            <Count>3705</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>59</Length>
+            <Count>1381</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>27</Length>
+            <Count>42514</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>49</Length>
+            <Count>4387</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>52</Length>
+            <Count>4436</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>42</Length>
+            <Count>2715</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>25</Length>
+            <Count>52595</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>14166</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>35</Length>
+            <Count>13543</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>20</Length>
+            <Count>35377</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>40</Length>
+            <Count>7901</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>903</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>19</Length>
+            <Count>47310</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>53</Length>
+            <Count>3698</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>36</Length>
+            <Count>5957</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>24</Length>
+            <Count>45696</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>44</Length>
+            <Count>10428</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>51</Length>
+            <Count>3909</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>7491</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>48</Length>
+            <Count>2287</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>28</Length>
+            <Count>26651</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>21</Length>
+            <Count>31609</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>61</Length>
+            <Count>1437</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>46</Length>
+            <Count>614</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>37</Length>
+            <Count>9522</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>14</Length>
+            <Count>79879</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>26</Length>
+            <Count>42612</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>31</Length>
+            <Count>26710</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>41</Length>
+            <Count>4491</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>11</Length>
+            <Count>2635</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>39</Length>
+            <Count>7044</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>30</Length>
+            <Count>33146</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>23</Length>
+            <Count>45236</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>29</Length>
+            <Count>59325</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>22</Length>
+            <Count>37870</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>12</Length>
+            <Count>5513</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>56</Length>
+            <Count>100</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="usage_frequency" RowCount="873318" />
+        <Column Name="dropoff_counts" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>3</MinLength>
+        <MaxLength>5</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>3</Length>
+            <Count>489195</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>4</Length>
+            <Count>374798</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>5</Length>
+            <Count>9325</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="usage_frequency" RowCount="873318" />
+        <Column Name="date" SqlDbType="Date" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1584</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="usage_frequency" RowCount="873318" />
+        <Column Name="station_name" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <NumberOfDistinctValues>905</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>11th &amp; F St NW</Value>
+            <Count>1568</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>17th St &amp; Independence Ave SW</Value>
+            <Count>1552</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1st &amp; M St SE</Value>
+            <Count>1577</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>39th &amp; Calvert St NW / Stoddert</Value>
+            <Count>1574</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4th &amp; East Capitol St NE</Value>
+            <Count>1581</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4th &amp; M St SE</Value>
+            <Count>1581</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Park Run &amp; Onyx Dr</Value>
+            <Count>1101</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W Broad St &amp; Little Falls St</Value>
+            <Count>1099</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th &amp; Q St NW</Value>
+            <Count>1480</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>13th &amp; U St NW</Value>
+            <Count>1456</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>23rd St S &amp; Hayes St</Value>
+            <Count>1229</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wisconsin Ave &amp; O St NW</Value>
+            <Count>1580</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Woodglen Dr &amp; Executive Blvd</Value>
+            <Count>1161</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>34th St &amp; Wisconsin Ave NW</Value>
+            <Count>1578</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3rd &amp; Elm St NW</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3rd St &amp; Riggs Rd NE</Value>
+            <Count>1415</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>9th &amp; Upshur St NW</Value>
+            <Count>1580</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Adams Mill &amp; Columbia Rd NW</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Anacostia Ave &amp; Benning Rd NE / River Terrace </Value>
+            <Count>1465</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>C &amp; O Canal &amp; Wisconsin Ave NW</Value>
+            <Count>1581</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Connecticut Ave &amp; McKinley St NW</Value>
+            <Count>1529</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Florida Ave &amp; R St NW</Value>
+            <Count>1572</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jefferson Memorial</Value>
+            <Count>1565</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Park Rd &amp; Holmead Pl NW</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Potomac Ave &amp; Swann Ave</Value>
+            <Count>1493</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Washington Blvd &amp; Walter Reed Dr </Value>
+            <Count>1365</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Eisenhower Ave &amp; Ike Dr</Value>
+            <Count>917</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>National Airport</Value>
+            <Count>1267</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wilson Blvd &amp; N Quinn St</Value>
+            <Count>1292</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W&amp;OD Trail &amp; Langston Blvd</Value>
+            <Count>936</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>15th &amp; Euclid St NW</Value>
+            <Count>1118</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>18th &amp; R St NW</Value>
+            <Count>1575</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>21st St &amp; Pennsylvania Ave NW</Value>
+            <Count>1560</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>22nd &amp; H St NW</Value>
+            <Count>1570</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6th &amp; K St NE</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Columbia Rd &amp; Georgia Ave NW</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Crystal City Metro / 18th St &amp; S Bell St</Value>
+            <Count>1534</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Eads St &amp; 12th St S</Value>
+            <Count>1569</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Fenton St &amp; Gist Ave</Value>
+            <Count>1362</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Fenton St &amp; New York Ave </Value>
+            <Count>1365</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kennedy Center</Value>
+            <Count>1568</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Lincoln Rd &amp; Seaton Pl NE/Harry Thomas Rec Center</Value>
+            <Count>1561</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Carroll &amp; Ethan Allen Ave</Value>
+            <Count>1475</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Capitol Ave &amp; Kendall St NE</Value>
+            <Count>1451</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Broad Branch Rd &amp; Northampton St NW</Value>
+            <Count>1116</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>17th &amp; P St NW</Value>
+            <Count>1062</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Braddock Rd Metro South</Value>
+            <Count>929</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th &amp; Girard St NW</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>15th &amp; East Capitol St NE</Value>
+            <Count>1580</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3rd &amp; Underwood St NW</Value>
+            <Count>1431</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>47th &amp; Elm St</Value>
+            <Count>1131</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4th &amp; E St SW</Value>
+            <Count>1578</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7th &amp; F St NW / National Portrait Gallery</Value>
+            <Count>1577</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Barcroft Community Center</Value>
+            <Count>1296</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>John McCormack Dr &amp; Michigan Ave NE</Value>
+            <Count>1488</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>King St Metro South</Value>
+            <Count>1432</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>New Hampshire Ave &amp; T St NW</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>15th St &amp; Pennsylvania Ave NW</Value>
+            <Count>1520</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Vermont Ave &amp; I St NW</Value>
+            <Count>1470</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>12th St &amp; Pennsylvania Ave SE</Value>
+            <Count>1572</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th &amp; Otis Pl NW</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5th St &amp; Massachusetts Ave NW</Value>
+            <Count>1568</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Army Navy Dr &amp; S Nash St</Value>
+            <Count>985</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Bethesda Ave &amp; Arlington Rd</Value>
+            <Count>1479</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Commonwealth Ave &amp; Oak St</Value>
+            <Count>1047</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Franklin St &amp; S Washington St</Value>
+            <Count>1358</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>King Greenleaf Rec Center</Value>
+            <Count>1558</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mount Vernon Ave &amp; Bruce St</Value>
+            <Count>1151</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Washington &amp; Independence Ave SW/HHS</Value>
+            <Count>1523</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>New York Ave &amp; 15th St NW</Value>
+            <Count>1127</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>New Jersey Ave &amp; N St NW/Dunbar HS</Value>
+            <Count>1580</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Norfolk &amp; Rugby Ave</Value>
+            <Count>1022</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TJ Cmty Ctr / 2nd St &amp; S Old Glebe Rd</Value>
+            <Count>1451</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Thomas Circle</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Georgia Ave &amp; Kennedy St NW</Value>
+            <Count>1455</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Arlington Blvd &amp; Ft Myer Dr</Value>
+            <Count>1277</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>16th &amp; Harvard St NW</Value>
+            <Count>1253</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2nd St &amp; Seaton Pl NE</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>37th &amp; O St NW / Georgetown University</Value>
+            <Count>1575</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3rd &amp; H St NE</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Arlington Blvd &amp; Fillmore St</Value>
+            <Count>1434</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Eads St &amp; 22nd St S</Value>
+            <Count>1521</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Grant Circle</Value>
+            <Count>1573</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>N Lynn St &amp; Fairfax Dr</Value>
+            <Count>1568</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rhode Island &amp; Montana Ave NE</Value>
+            <Count>1442</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Takoma Metro</Value>
+            <Count>1568</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S Randolph St &amp; Campbell Ave</Value>
+            <Count>907</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>13th &amp; E St SE</Value>
+            <Count>1570</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>17th &amp; Corcoran St NW</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>19th &amp; East Capitol St SE</Value>
+            <Count>1566</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>24th &amp; R St NE / National Arboretum</Value>
+            <Count>1500</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7th &amp; T St NW</Value>
+            <Count>992</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Gravelly Point</Value>
+            <Count>1545</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>L'Enfant Plaza / 7th &amp; C St SW</Value>
+            <Count>1568</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Maple &amp; Ritchie Ave</Value>
+            <Count>1222</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Monroe Ave &amp; Leslie Ave</Value>
+            <Count>1455</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Royal St &amp; Wilkes St</Value>
+            <Count>1394</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Falls Church City Hall / Park Ave &amp; Little Falls St</Value>
+            <Count>943</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th &amp; Irving St NW</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1st &amp; Rhode Island Ave NW</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>23rd &amp; M St NW</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>28th St &amp; S Meade St</Value>
+            <Count>1407</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3rd St &amp; Pennsylvania Ave SE</Value>
+            <Count>1581</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5th &amp; K St NW</Value>
+            <Count>1581</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Anacostia Park</Value>
+            <Count>1373</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Clark St &amp; 26th St S</Value>
+            <Count>1369</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Congress Heights Metro</Value>
+            <Count>1172</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Court House Metro / 15th St &amp; N Uhle St</Value>
+            <Count>1568</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Dunn Loring Metro</Value>
+            <Count>1214</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Friendship Hts Metro / Wisconsin Ave &amp; Wisconsin Cir</Value>
+            <Count>1513</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Harvard St &amp; Adams Mill Rd NW</Value>
+            <Count>1520</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Independence Ave &amp; L'Enfant Plaza SW/DOE</Value>
+            <Count>1511</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Lincoln Memorial</Value>
+            <Count>1570</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Long Bridge Park / Long Bridge Dr &amp; 6th St S</Value>
+            <Count>1323</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Lynn St &amp; 19th St North</Value>
+            <Count>926</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rhode Island Ave &amp; 39th St / Brentwood Arts Exchange</Value>
+            <Count>1016</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Union Market</Value>
+            <Count>1578</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>East West Hwy &amp; 16th St</Value>
+            <Count>1252</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>17th &amp; K St NW / Farragut Square</Value>
+            <Count>1486</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Thomas Jefferson St NW &amp; Water/K St NW</Value>
+            <Count>1240</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10th &amp; E St NW</Value>
+            <Count>1573</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10th &amp; K St NW</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th &amp; Belmont St NW</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>21st &amp; I St NW</Value>
+            <Count>1577</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5th &amp; F St NW</Value>
+            <Count>1571</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Alabama &amp; MLK Ave SE</Value>
+            <Count>1021</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Crystal Dr &amp; 23rd St S</Value>
+            <Count>1547</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>M St &amp; New Jersey Ave SE</Value>
+            <Count>1577</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Neal St &amp; Trinidad Ave NE</Value>
+            <Count>1553</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rhodes St &amp; 16th St N</Value>
+            <Count>1455</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>West Hyattsville Metro</Value>
+            <Count>1467</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Sligo Ave &amp; Carroll Ln</Value>
+            <Count>1014</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Columbia Pike &amp; S Greenbrier St</Value>
+            <Count>1038</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Langston Blvd &amp; N Woodstock St</Value>
+            <Count>999</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th St &amp; Spring Rd NW</Value>
+            <Count>1483</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>20th St &amp; Virginia Ave NW</Value>
+            <Count>1477</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>39th &amp; Veazey St NW</Value>
+            <Count>1558</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>East West Hwy &amp; Blair Mill Rd</Value>
+            <Count>1369</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>N Veitch St &amp; 20th St N</Value>
+            <Count>1533</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ward Circle / American University</Value>
+            <Count>1452</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cordell &amp; Norfolk Ave</Value>
+            <Count>1359</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Connecticut Ave &amp; Chevy Chase Lake Dr</Value>
+            <Count>926</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S Clark St &amp; 33rd St</Value>
+            <Count>1189</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>15th &amp; L St NW</Value>
+            <Count>1569</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>17th &amp; Upshur St NW</Value>
+            <Count>1486</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3rd &amp; H St NW</Value>
+            <Count>1575</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Clarendon Blvd &amp; Pierce St</Value>
+            <Count>1564</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Convention Center / 7th &amp; M St NW</Value>
+            <Count>1574</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Georgia Ave &amp; Morton St NW</Value>
+            <Count>1579</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Glebe Rd &amp; 11th St N</Value>
+            <Count>1381</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kennebec St &amp; 11th St N</Value>
+            <Count>1351</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>N Veitch St &amp; Key Blvd</Value>
+            <Count>1363</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rolfe St &amp; 9th St S</Value>
+            <Count>1410</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>17th &amp; K St NW</Value>
+            <Count>1539</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>15th &amp; K St NW</Value>
+            <Count>1460</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Braddock Rd Metro North</Value>
+            <Count>893</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Georgia Ave &amp; Fairmont St NW</Value>
+            <Count>909</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Woodley Park Metro / Calvert St &amp; Connecticut Ave NW</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10th St &amp; L'Enfant Plaza SW</Value>
+            <Count>1536</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>American University East Campus</Value>
+            <Count>1516</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>East Falls Church Metro / Sycamore St &amp; 19th St N</Value>
+            <Count>1503</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Georgia &amp; Missouri Ave NW</Value>
+            <Count>1548</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Silver Spring Transit Center - Top Level</Value>
+            <Count>1036</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S Maple Ave &amp; S Washington St</Value>
+            <Count>1169</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2nd &amp; V St SW / James Creek Marina</Value>
+            <Count>1277</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>King St &amp; N Pitt St</Value>
+            <Count>912</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>12th &amp; Newton St NE</Value>
+            <Count>1478</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>18th &amp; New Hampshire Ave NW</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>20th &amp; E St NW</Value>
+            <Count>1578</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2nd St &amp; Massachusetts Ave NE</Value>
+            <Count>1580</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Crystal Dr &amp; 27th St S</Value>
+            <Count>1481</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Maine Ave &amp; 9th St SW</Value>
+            <Count>1581</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Merrifield Cinema &amp; Merrifield Town Center</Value>
+            <Count>1041</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Pleasant St &amp; MLK Ave SE</Value>
+            <Count>1105</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Queens Chapel &amp; Hamilton St</Value>
+            <Count>1160</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Roosevelt Island</Value>
+            <Count>1502</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Tenleytown / Wisconsin Ave &amp; Albemarle St NW</Value>
+            <Count>1572</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Trinidad Rec Center</Value>
+            <Count>1489</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>18th &amp; Monroe St NE</Value>
+            <Count>1292</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Bethesda Metro / Wisconsin Ave &amp; Old Georgetown Rd</Value>
+            <Count>1442</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>17th &amp; G St NW</Value>
+            <Count>1528</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mt Vernon Trail &amp; S. Washington St.</Value>
+            <Count>1458</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rosslyn Metro / Wilson Blvd &amp; N Moore St</Value>
+            <Count>1208</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>13th St &amp; Eastern Ave</Value>
+            <Count>1240</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1st &amp; Washington Hospital Center NW</Value>
+            <Count>1579</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6th St &amp; Indiana Ave NW</Value>
+            <Count>1573</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7th &amp; R St NW / Shaw Library</Value>
+            <Count>1579</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7th &amp; S St NW</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Baltimore Ave &amp; Van Buren St / Riverdale Park Station</Value>
+            <Count>1343</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Benning Rd &amp; East Capitol St NE / Benning Rd Metro</Value>
+            <Count>1286</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Columbia Rd &amp; Belmont St NW</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Columbus Circle / Union Station</Value>
+            <Count>1569</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Fairfax Dr &amp; N Randolph St</Value>
+            <Count>1525</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Georgia Ave &amp; Emerson St NW</Value>
+            <Count>1442</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mount Vernon Ave &amp; Kennedy St</Value>
+            <Count>1352</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>N Quincy St &amp; Glebe Rd</Value>
+            <Count>1467</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Oglethorpe St &amp; 42nd Ave</Value>
+            <Count>1250</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>US Dept of State / Virginia Ave &amp; 21st St NW</Value>
+            <Count>1129</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Veterans Pl &amp; Pershing Dr </Value>
+            <Count>1063</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10th &amp; H St NE</Value>
+            <Count>1004</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>11th &amp; Girard St NW</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>11th &amp; O St NW</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>12th &amp; Irving St NE</Value>
+            <Count>1542</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>18th &amp; L St NW</Value>
+            <Count>1579</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>18th &amp; M St NW</Value>
+            <Count>1580</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>20th &amp; O St NW / Dupont South</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>22nd St &amp; Constitution Ave NW</Value>
+            <Count>1542</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>24th &amp; N St NW</Value>
+            <Count>1575</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3rd &amp; G St SE</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8th &amp; Eye St SE / Barracks Row</Value>
+            <Count>1577</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Carroll &amp; Westmoreland Ave</Value>
+            <Count>1429</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kingman Island/The Fields at RFK</Value>
+            <Count>1464</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Montello Ave &amp; Holbrook Terr NE</Value>
+            <Count>1574</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mount Vernon Ave &amp; Four Mile Run Park</Value>
+            <Count>1300</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rosedale Rec Center</Value>
+            <Count>1537</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Connecticut Ave &amp; Macomb St NW / Cleveland Park</Value>
+            <Count>909</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Yuma St &amp; Tenley Circle NW</Value>
+            <Count>1238</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>11th &amp; Park Rd NW</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>15th &amp; M St NW</Value>
+            <Count>1581</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>17th St &amp; Massachusetts Ave NW</Value>
+            <Count>1577</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Arlington Blvd &amp; N Queen St</Value>
+            <Count>1160</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>California St &amp; Florida Ave NW</Value>
+            <Count>1580</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Fleet St &amp; Waterfront St</Value>
+            <Count>1022</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>King St &amp; Patrick St</Value>
+            <Count>1406</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Madison St &amp; N Henry St</Value>
+            <Count>1260</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Maryland Ave &amp; E St NE</Value>
+            <Count>1580</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>New Jersey Ave &amp; F St NW</Value>
+            <Count>1574</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Washington Blvd &amp; 10th St N</Value>
+            <Count>1543</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Lee Center</Value>
+            <Count>901</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Langston Blvd &amp; N Cleveland St</Value>
+            <Count>1083</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10th &amp; Monroe St NE</Value>
+            <Count>1560</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>13th &amp; D St NE</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>15th &amp; P St NW</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>20th &amp; L St NW</Value>
+            <Count>1578</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>20th St &amp; Florida Ave NW</Value>
+            <Count>1563</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>21st St &amp; N Pierce St</Value>
+            <Count>1513</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10th &amp; G St NW</Value>
+            <Count>1574</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>13th St &amp; New York Ave NW</Value>
+            <Count>1549</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>15th &amp; W St NW</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>15th St &amp; N Scott St</Value>
+            <Count>1542</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1st &amp; H St NW</Value>
+            <Count>1579</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1st &amp; O St NW</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Columbia Pike &amp; S Orme St</Value>
+            <Count>1309</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Crystal Dr &amp; 20th St S</Value>
+            <Count>1548</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Deanwood Rec Center</Value>
+            <Count>889</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Eads St &amp; 15th St S</Value>
+            <Count>1499</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Nannie Helen Burroughs Ave &amp; 49th St NE</Value>
+            <Count>891</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>North Capitol &amp; R St NE</Value>
+            <Count>1579</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Tanger Outlets</Value>
+            <Count>1102</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th &amp; D St SE</Value>
+            <Count>1479</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>20th &amp; Columbia Rd NW</Value>
+            <Count>1328</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1st &amp; N St SE</Value>
+            <Count>1110</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th &amp; Harvard St NW</Value>
+            <Count>1580</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>19th &amp; E Street NW</Value>
+            <Count>1326</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1st &amp; D St SE</Value>
+            <Count>1568</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Carlin Springs Rd &amp; N Thomas St</Value>
+            <Count>1457</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Citadel Ave &amp; McGrath Blvd</Value>
+            <Count>978</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Clarendon Blvd &amp; N Fillmore St</Value>
+            <Count>1548</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Crystal Dr &amp; 15th St S</Value>
+            <Count>1560</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Good Hope Rd &amp; MLK Ave SE</Value>
+            <Count>1143</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>King Farm Blvd &amp; Pleasant Dr</Value>
+            <Count>954</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mount Vernon Ave &amp; E Nelson Ave</Value>
+            <Count>1428</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>North Capitol St &amp; G Pl NE</Value>
+            <Count>1552</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Potomac Ave &amp; Main Line Blvd</Value>
+            <Count>1417</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rhode Island Ave Metro</Value>
+            <Count>1577</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Pennsylvania Ave &amp; Park Ave</Value>
+            <Count>934</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>New Hampshire Ave &amp; Ward Pl NW</Value>
+            <Count>1570</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th St &amp; New York Ave NW</Value>
+            <Count>1532</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wilson Blvd &amp; Ft Myer Dr</Value>
+            <Count>1085</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>11th &amp; M St NW</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th St Heights / 14th &amp; Crittenden St NW</Value>
+            <Count>1486</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>48th Pl &amp; MacArthur Blvd NW</Value>
+            <Count>1449</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4th &amp; W St NE</Value>
+            <Count>1577</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7th &amp; K St NW</Value>
+            <Count>1574</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>D St &amp; Maryland Ave NE</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Joyce St &amp; 16th St S</Value>
+            <Count>1547</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Metro Center / 12th &amp; G St NW</Value>
+            <Count>1574</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Prince George's Plaza Metro</Value>
+            <Count>1445</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Silver Spring Metro / Colesville Rd &amp; Wayne Ave</Value>
+            <Count>1343</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wilson Blvd &amp; N Oak St</Value>
+            <Count>1333</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>New Jersey Ave &amp; K St NW</Value>
+            <Count>892</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>11th &amp; Kenyon St NW</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>12th &amp; L St NW</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th &amp; Newton St NW</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th St &amp; Colorado Ave NW</Value>
+            <Count>1564</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>25th St &amp; Pennsylvania Ave NW</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8th &amp; D St NW</Value>
+            <Count>1566</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8th &amp; H St NE</Value>
+            <Count>1573</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ballenger Ave &amp; Dulaney St</Value>
+            <Count>1355</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Columbia Pike &amp; S Courthouse Rd</Value>
+            <Count>1381</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Columbia Pike &amp; S Walter Reed Dr</Value>
+            <Count>1430</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Connecticut Ave &amp; R St NW</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Fairfax Dr &amp; Wilson Blvd</Value>
+            <Count>1539</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Hardy Rec Center</Value>
+            <Count>1545</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jefferson Dr &amp; 14th St SW</Value>
+            <Count>1571</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>M St &amp; Pennsylvania Ave NW</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Market Square / King St &amp; Royal St</Value>
+            <Count>1532</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Maryland Ave &amp; 17th St NE</Value>
+            <Count>1576</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>New Hampshire Ave &amp; 24th St NW</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Perry &amp; 35th St</Value>
+            <Count>1125</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Potomac &amp; Pennsylvania Ave SE</Value>
+            <Count>1579</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kansas Ave &amp; Longfellow St NW</Value>
+            <Count>1249</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>N Pitt St &amp; Montgomery St</Value>
+            <Count>1176</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7th St &amp; Massachusetts Ave NE</Value>
+            <Count>1580</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Arlington Mill Cmty Center / Columbia Pike &amp; S Dinwiddie St</Value>
+            <Count>1381</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Congressional Ln &amp; E Jefferson St</Value>
+            <Count>931</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Medical Center Metro </Value>
+            <Count>1270</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Old Georgetown Rd &amp; Southwick St</Value>
+            <Count>1428</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Washington-Liberty High School / N Stafford St &amp; Generals Way</Value>
+            <Count>1437</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>N. Beauregard St. &amp; Berkley St.</Value>
+            <Count>1097</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wisconsin Ave &amp; Newark St NW</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th &amp; Upshur St NW</Value>
+            <Count>1546</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1st &amp; K St NE</Value>
+            <Count>1559</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4th St &amp; Madison Dr NW</Value>
+            <Count>1566</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7th &amp; E St SW</Value>
+            <Count>1543</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Eastern Market / 7th &amp; North Carolina Ave SE</Value>
+            <Count>1581</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Georgia &amp; New Hampshire Ave NW</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Iwo Jima Memorial / Meade &amp; 14th St N</Value>
+            <Count>1535</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Madison St &amp; Fairfax St</Value>
+            <Count>1447</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Maine Ave &amp; 7th St SW</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Montgomery Ave &amp; Waverly St </Value>
+            <Count>1128</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Potomac Ave &amp; 8th St SE</Value>
+            <Count>1544</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rhode Island Ave &amp; V St NE</Value>
+            <Count>1564</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Smithsonian-National Mall / Jefferson Dr &amp; 12th St SW</Value>
+            <Count>1566</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Twinbrook Metro</Value>
+            <Count>978</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>18th St &amp; Pennsylvania Ave NW</Value>
+            <Count>1534</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>21st St &amp; G st NW</Value>
+            <Count>1379</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Langston Blvd &amp; N Monroe St</Value>
+            <Count>1016</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10th St &amp; Constitution Ave NW</Value>
+            <Count>1554</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>18th St &amp; Wyoming Ave NW</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3000 Connecticut Ave NW / National Zoo</Value>
+            <Count>1575</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8th &amp; O St NW</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kansas Ave &amp; Sherman Cr NW</Value>
+            <Count>1580</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Massachusetts Ave &amp; 6th St NE</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Massachusetts Ave &amp; Dupont Circle NW</Value>
+            <Count>1581</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>N Roosevelt St &amp; Roosevelt Blvd</Value>
+            <Count>1263</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>16th &amp; Q St SE / Anacostia HS</Value>
+            <Count>1012</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4th &amp; Florida Ave NE</Value>
+            <Count>1050</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wilson Blvd. &amp; N. Vermont St.</Value>
+            <Count>883</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>13th &amp; H St NE</Value>
+            <Count>1580</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>18th &amp; C St NW</Value>
+            <Count>1510</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>18th St &amp; Rhode Island Ave NE</Value>
+            <Count>1362</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1st &amp; S Capitol St SE / Oxon Run Trail</Value>
+            <Count>1074</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>34th &amp; Water St NW</Value>
+            <Count>1556</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Calvert &amp; Biltmore St NW</Value>
+            <Count>1576</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Calvert St &amp; Woodley Pl NW</Value>
+            <Count>1579</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Central Library / Quincy St &amp; 10th St N</Value>
+            <Count>1512</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Clarendon Metro / Wilson Blvd &amp; N Highland St</Value>
+            <Count>1572</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Edgewood Rec Center</Value>
+            <Count>1581</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>John McCormack Rd NE</Value>
+            <Count>1450</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>National Harbor Carousel</Value>
+            <Count>1359</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Oklahoma Ave &amp; D St NE</Value>
+            <Count>1566</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Pentagon City Metro / 12th St &amp; S Hayes St</Value>
+            <Count>1562</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Powhatan St &amp; Bashford Ln</Value>
+            <Count>1382</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>W Columbia St &amp; N Washington St</Value>
+            <Count>1119</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wheaton Metro / Georgia Ave &amp; Reedie Dr</Value>
+            <Count>1154</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>St Asaph &amp; Pendleton St</Value>
+            <Count>1266</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1st St &amp; Potomac Ave SE</Value>
+            <Count>1332</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Langston Blvd &amp; N Adams St</Value>
+            <Count>1129</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wilson Blvd &amp; N Franklin Rd</Value>
+            <Count>1509</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wilson Blvd &amp; N Quincy St</Value>
+            <Count>1562</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wilson Blvd &amp; N Troy St</Value>
+            <Count>1510</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>16th &amp; Irving St NW</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>16th &amp; R St NW</Value>
+            <Count>1581</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>19th &amp; K St NW</Value>
+            <Count>1001</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8th &amp; H St NW</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Branch &amp; Pennsylvania Ave SE</Value>
+            <Count>1040</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Connecticut &amp; Nebraska Ave NW</Value>
+            <Count>1567</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Eisenhower Ave &amp; Mill Race Ln</Value>
+            <Count>1452</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>N Oak St &amp; W Broad St</Value>
+            <Count>1028</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>New Hampshire Ave &amp; East-West Hwy</Value>
+            <Count>953</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Pennsylvania &amp; Minnesota Ave SE</Value>
+            <Count>1247</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>River Rd &amp; Landy Ln</Value>
+            <Count>1503</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Riverdale Park Town Center</Value>
+            <Count>1329</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Van Ness Metro / UDC</Value>
+            <Count>1570</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>WAU / Flower Ave &amp; Division St</Value>
+            <Count>1298</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Westover Library / Washington Blvd &amp; N McKinley Rd</Value>
+            <Count>977</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Half &amp; Water St SW</Value>
+            <Count>1407</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Stadium Armory Metro</Value>
+            <Count>1412</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8th &amp; V St NW</Value>
+            <Count>1061</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Woodmont Ave &amp; Strathmore St</Value>
+            <Count>1534</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th &amp; L St NW</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th &amp; R St NW</Value>
+            <Count>1578</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>19th St &amp; Constitution Ave NW</Value>
+            <Count>1518</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5th &amp; Kennedy St NW</Value>
+            <Count>1510</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Army Navy Dr &amp; S Joyce St</Value>
+            <Count>936</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Columbia &amp; Ontario Rd NW</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Gallaudet / 8th St &amp; Florida Ave NE</Value>
+            <Count>1467</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Minnesota Ave &amp; R St SE</Value>
+            <Count>1220</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ohio Dr &amp; West Basin Dr SW / MLK &amp; FDR Memorials</Value>
+            <Count>1531</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rhode Island &amp; Connecticut Ave NW</Value>
+            <Count>1575</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>USDA / 12th &amp; C St SW</Value>
+            <Count>1541</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Virginia Square Metro / Monroe St &amp; 9th St N</Value>
+            <Count>1568</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>West Falls Church Metro</Value>
+            <Count>875</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wilson Blvd &amp; N Edgewood St</Value>
+            <Count>1541</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wilson Blvd &amp; N Uhle St</Value>
+            <Count>1535</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Anacostia Metro</Value>
+            <Count>1428</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th &amp; D St NW / Ronald Reagan Building</Value>
+            <Count>1127</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Eastern Market Metro / Pennsylvania Ave &amp; 8th St SE</Value>
+            <Count>1397</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Langston Blvd &amp; N Scott St</Value>
+            <Count>1111</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wilson Blvd &amp; N Illinois St </Value>
+            <Count>1399</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>11th &amp; C St SE</Value>
+            <Count>1579</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th &amp; V St NW</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4th &amp; D St NW / Judiciary Square</Value>
+            <Count>1535</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8th &amp; East Capitol St NE</Value>
+            <Count>1581</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Constitution Ave &amp; 2nd St NW/DOL</Value>
+            <Count>1562</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Fenton St &amp; Ellsworth Dr </Value>
+            <Count>1434</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Fessenden St &amp; Wisconsin Ave NW</Value>
+            <Count>1392</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Lamont &amp; Mt Pleasant NW</Value>
+            <Count>1581</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Lincoln Park / 13th &amp; East Capitol St NE </Value>
+            <Count>1581</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Potomac Ave &amp; 35th St S</Value>
+            <Count>1460</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S Arlington Mill Dr &amp; Campbell Ave</Value>
+            <Count>1427</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Anacostia Library</Value>
+            <Count>1045</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Arlington Blvd &amp; Fairfax Dr</Value>
+            <Count>1293</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th &amp; Rhode Island Ave NW</Value>
+            <Count>1093</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>15th &amp; F St NE</Value>
+            <Count>1579</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2nd &amp; G St NE</Value>
+            <Count>1576</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4th St &amp; Mississippi Ave SE</Value>
+            <Count>876</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8th &amp; K St NE</Value>
+            <Count>1459</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Battery Ln &amp; Trolley Trail</Value>
+            <Count>1505</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Henry Bacon Dr &amp; Lincoln Memorial Circle NW</Value>
+            <Count>1564</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Henry St &amp; Pendleton St</Value>
+            <Count>1306</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Minnesota Ave Metro/DOES</Value>
+            <Count>1092</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>New Hampshire &amp; Gallatin St NW</Value>
+            <Count>1542</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Potomac Ave &amp; Half St SW</Value>
+            <Count>1508</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Washington Blvd &amp; 7th St N</Value>
+            <Count>1396</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>George Mason Dr &amp; Wilson Blvd</Value>
+            <Count>1467</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wakefield High School</Value>
+            <Count>1105</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MBT &amp; Bryant St NE</Value>
+            <Count>1097</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10th &amp; U St NW</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>11th &amp; S St NW</Value>
+            <Count>1581</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>12th &amp; U St NW</Value>
+            <Count>1577</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>22nd &amp; P ST NW</Value>
+            <Count>1580</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3rd &amp; M St NE</Value>
+            <Count>1106</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6th &amp; H St NE</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Aurora Hills Cmty Ctr / 18th St &amp; S Hayes St</Value>
+            <Count>1462</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ballston Metro / Stuart St &amp; 9th St N</Value>
+            <Count>1565</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Barton St &amp; 10th St N</Value>
+            <Count>1381</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Bladensburg Rd &amp; Benning Rd NE</Value>
+            <Count>1555</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Commonwealth Ave &amp; E Monroe Ave</Value>
+            <Count>1223</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Eckington Pl &amp; Q St NE</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>New York Ave &amp; Hecht Ave NE</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>North Capitol St &amp; F St NW</Value>
+            <Count>1579</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Potomac Greens Dr &amp; Slaters Ln</Value>
+            <Count>1392</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>S Glebe Rd &amp; Potomac Ave</Value>
+            <Count>1532</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Virginia Ave &amp; 25th St NW</Value>
+            <Count>1578</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>The Mall at Prince Georges</Value>
+            <Count>1385</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14th &amp; G St NW</Value>
+            <Count>1539</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>15th St &amp; Constitution Ave NW</Value>
+            <Count>1537</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mount Vernon Ave &amp; E Del Ray Ave</Value>
+            <Count>1344</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>11th &amp; V st NW</Value>
+            <Count>1060</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3rd &amp; M St SE</Value>
+            <Count>1297</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>15th St &amp; Massachusetts Ave SE</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1st &amp; M St NE</Value>
+            <Count>1583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>36th &amp; Calvert St NW / Glover Park</Value>
+            <Count>1556</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4th &amp; C St SW</Value>
+            <Count>1575</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Alabama Ave &amp; Stanton Rd SE / Shops at Park Village</Value>
+            <Count>896</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Baltimore Ave &amp; Jefferson St</Value>
+            <Count>1239</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Chillum Rd &amp; Riggs Rd / Riggs Plaza</Value>
+            <Count>1475</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Connecticut Ave &amp; Tilden St NW</Value>
+            <Count>1550</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Duke St &amp; John Carlyle St</Value>
+            <Count>1418</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Fort Totten Metro</Value>
+            <Count>1569</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Friendship Blvd &amp; Willard Ave</Value>
+            <Count>1456</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Georgia Ave &amp; Piney Branch Rd NW</Value>
+            <Count>1476</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Hains Point/Buckeye &amp; Ohio Dr SW</Value>
+            <Count>1565</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Reservoir Rd &amp; 38th St NW</Value>
+            <Count>1580</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Shady Grove Metro West</Value>
+            <Count>910</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Commonwealth and Reed</Value>
+            <Count>958</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wisconsin Ave &amp; Brandywine St NW</Value>
+            <Count>1528</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>19th &amp; G St NW</Value>
+            <Count>1519</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>19th St &amp; Pennsylvania Ave NW</Value>
+            <Count>1529</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>23rd &amp; E St NW </Value>
+            <Count>1579</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3rd &amp; D St SE</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3rd &amp; Tingey St SE</Value>
+            <Count>1571</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8th &amp; F St NE</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Arlington Blvd &amp; S George Mason Dr</Value>
+            <Count>1063</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Commerce St &amp; Fayette St</Value>
+            <Count>1364</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>King St Metro North / Cameron St</Value>
+            <Count>1524</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Norfolk Ave &amp; Fairmont St</Value>
+            <Count>1360</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Oklahoma Ave &amp; Benning Rd NE</Value>
+            <Count>1464</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Potomac &amp; M St NW</Value>
+            <Count>1570</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Prince St &amp; Union St</Value>
+            <Count>1450</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Saint Asaph St &amp; Madison St</Value>
+            <Count>1405</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Walter Reed Dr &amp; 8th St S</Value>
+            <Count>1052</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Offutt Ln &amp; Chevy Chase Dr</Value>
+            <Count>1327</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Long Bridge Aquatic Center</Value>
+            <Count>1028</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Main Line Blvd &amp; E Glebe</Value>
+            <Count>987</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Arizona Ave &amp; MacArthur Blvd NW</Value>
+            <Count>904</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wisconsin Ave &amp; Ingomar St NW</Value>
+            <Count>1471</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>22nd &amp; I St NW / Foggy Bottom</Value>
+            <Count>1574</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4th &amp; M St SW</Value>
+            <Count>1581</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Connecticut Ave &amp; Yuma St NW</Value>
+            <Count>1532</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Georgetown Harbor / 30th St NW</Value>
+            <Count>1575</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Hamlin &amp; 7th St NE</Value>
+            <Count>1557</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>New Jersey Ave &amp; R St NW</Value>
+            <Count>1582</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="usage_frequency" RowCount="873318" />
+        <Column Name="pickup_counts" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <NumberOfDistinctValues>285</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>14</Value>
+            <Count>14185</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>55</Value>
+            <Count>2468</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>19</Value>
+            <Count>10579</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>36</Value>
+            <Count>5388</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>53</Value>
+            <Count>2657</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>66</Value>
+            <Count>1395</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>73</Value>
+            <Count>1116</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>13</Value>
+            <Count>15425</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>38</Value>
+            <Count>4853</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>72</Value>
+            <Count>1145</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>65</Value>
+            <Count>1530</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>15</Value>
+            <Count>13419</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>47</Value>
+            <Count>3561</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>45</Value>
+            <Count>3659</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>32</Value>
+            <Count>6097</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>11</Value>
+            <Count>18194</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>124488</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>31</Value>
+            <Count>6403</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>41</Value>
+            <Count>4274</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>26</Value>
+            <Count>7909</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>58</Value>
+            <Count>2072</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>64872</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4</Value>
+            <Count>51268</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>39</Value>
+            <Count>4627</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>23</Value>
+            <Count>9083</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>30</Value>
+            <Count>6678</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>64</Value>
+            <Count>1626</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>54</Value>
+            <Count>2569</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>71</Value>
+            <Count>1168</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5</Value>
+            <Count>41209</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>37</Value>
+            <Count>5104</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7</Value>
+            <Count>28996</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>40</Value>
+            <Count>4558</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10</Value>
+            <Count>20044</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>20</Value>
+            <Count>10181</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>57</Value>
+            <Count>2209</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>74</Value>
+            <Count>1090</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>33</Value>
+            <Count>5712</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>18</Value>
+            <Count>11294</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>68</Value>
+            <Count>1447</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>43</Value>
+            <Count>4026</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>24</Value>
+            <Count>8471</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>51</Value>
+            <Count>2910</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>44</Value>
+            <Count>3794</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>76</Value>
+            <Count>949</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>9</Value>
+            <Count>21780</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>34</Value>
+            <Count>5666</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>50</Value>
+            <Count>2999</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>69</Value>
+            <Count>1344</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>59</Value>
+            <Count>2048</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>77</Value>
+            <Count>940</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>16</Value>
+            <Count>12539</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>48</Value>
+            <Count>3310</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>70</Value>
+            <Count>1254</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>63</Value>
+            <Count>1747</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>12</Value>
+            <Count>16171</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>22</Value>
+            <Count>9187</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>56</Value>
+            <Count>2287</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>29</Value>
+            <Count>6812</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>87724</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>42</Value>
+            <Count>4172</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>27</Value>
+            <Count>7419</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>52</Value>
+            <Count>2786</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>49</Value>
+            <Count>3202</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>62</Value>
+            <Count>1789</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>67</Value>
+            <Count>1330</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>25</Value>
+            <Count>8231</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>17</Value>
+            <Count>11748</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8</Value>
+            <Count>25037</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>35</Value>
+            <Count>5495</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>60</Value>
+            <Count>1940</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>75</Value>
+            <Count>1019</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6</Value>
+            <Count>34296</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>21</Value>
+            <Count>9717</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>46</Value>
+            <Count>3533</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>28</Value>
+            <Count>7232</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>78</Value>
+            <Count>878</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>61</Value>
+            <Count>1934</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="usage_frequency" RowCount="873318" />
+        <Column Name="dropoff_counts" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <NumberOfDistinctValues>287</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>6.0</Value>
+            <Count>34000</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>42.0</Value>
+            <Count>4164</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>63.0</Value>
+            <Count>1765</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10.0</Value>
+            <Count>19285</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>51.0</Value>
+            <Count>2897</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>49.0</Value>
+            <Count>3224</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>52.0</Value>
+            <Count>2784</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>78.0</Value>
+            <Count>952</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3.0</Value>
+            <Count>63662</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8.0</Value>
+            <Count>24825</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>20.0</Value>
+            <Count>9876</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>62.0</Value>
+            <Count>1734</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>53.0</Value>
+            <Count>2593</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>12.0</Value>
+            <Count>15991</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>40.0</Value>
+            <Count>4408</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>66.0</Value>
+            <Count>1485</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>61.0</Value>
+            <Count>1975</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7.0</Value>
+            <Count>28506</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>24.0</Value>
+            <Count>8274</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>39.0</Value>
+            <Count>4617</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>38.0</Value>
+            <Count>4825</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>75.0</Value>
+            <Count>1081</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>31.0</Value>
+            <Count>6378</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>56.0</Value>
+            <Count>2445</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>71.0</Value>
+            <Count>1216</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>16.0</Value>
+            <Count>11855</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>47.0</Value>
+            <Count>3321</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>70.0</Value>
+            <Count>1263</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>73.0</Value>
+            <Count>1108</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>72.0</Value>
+            <Count>1204</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14.0</Value>
+            <Count>13404</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>32.0</Value>
+            <Count>6028</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>60.0</Value>
+            <Count>1953</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>45.0</Value>
+            <Count>3694</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5.0</Value>
+            <Count>40697</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>11.0</Value>
+            <Count>17308</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>33.0</Value>
+            <Count>5785</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>35.0</Value>
+            <Count>5288</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>77.0</Value>
+            <Count>956</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>65.0</Value>
+            <Count>1568</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1.0</Value>
+            <Count>93848</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>13.0</Value>
+            <Count>14556</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>9.0</Value>
+            <Count>21515</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>29.0</Value>
+            <Count>6870</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>55.0</Value>
+            <Count>2426</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2.0</Value>
+            <Count>80624</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>17.0</Value>
+            <Count>11162</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>57.0</Value>
+            <Count>2335</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>50.0</Value>
+            <Count>3063</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>25.0</Value>
+            <Count>7853</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>46.0</Value>
+            <Count>3512</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>64.0</Value>
+            <Count>1612</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>69.0</Value>
+            <Count>1373</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>23.0</Value>
+            <Count>8524</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>28.0</Value>
+            <Count>7125</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>26.0</Value>
+            <Count>7649</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>30.0</Value>
+            <Count>6623</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>36.0</Value>
+            <Count>5143</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>68.0</Value>
+            <Count>1340</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>21.0</Value>
+            <Count>9351</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0.0</Value>
+            <Count>50610</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>58.0</Value>
+            <Count>2137</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>44.0</Value>
+            <Count>3623</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>19.0</Value>
+            <Count>10246</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>43.0</Value>
+            <Count>3922</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>18.0</Value>
+            <Count>10581</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>27.0</Value>
+            <Count>7206</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>74.0</Value>
+            <Count>1071</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>76.0</Value>
+            <Count>983</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>15.0</Value>
+            <Count>12629</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>37.0</Value>
+            <Count>4913</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>34.0</Value>
+            <Count>5500</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>41.0</Value>
+            <Count>4348</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>48.0</Value>
+            <Count>3251</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>67.0</Value>
+            <Count>1455</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>59.0</Value>
+            <Count>2040</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>54.0</Value>
+            <Count>2531</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4.0</Value>
+            <Count>50908</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>22.0</Value>
+            <Count>8910</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="usage_frequency" RowCount="873318" />
+        <KeyColumns>
+          <Column Name="date" SqlDbType="Date" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+          <Column Name="station_name" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>false</IsExactKey>
+        <KeyStrength>0.9999965</KeyStrength>
+        <KeyViolations>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2022-06-30T00:00:00.0000000</ColumnValue>
+              <ColumnValue>3rd &amp; M St SE</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2022-09-29T00:00:00.0000000</ColumnValue>
+              <ColumnValue>11th &amp; V St NW</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2024-08-21T00:00:00.0000000</ColumnValue>
+              <ColumnValue>John McCormack Rd &amp; Michigan Ave NE</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+        </KeyViolations>
+      </CandidateKeyProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>

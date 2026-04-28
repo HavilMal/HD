@@ -1,0 +1,1546 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{6769C091-088B-4068-98B5-EC3B49762F01}" Name="localhost.Bikeshare">
+      <DtsConnectionManagerID>localhost.Bikeshare</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{D4F74341-D09B-4033-9698-4406E9C98470}" Name="Profil Częstotliwości Użytkowania.xml">
+      <DtsConnectionManagerID>Profil Częstotliwości Użytkowania.xml</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{38CAD5C0-D906-44BD-8977-D889277FCC0B}" Name="Profil Pogody.xml">
+      <DtsConnectionManagerID>Profil Pogody.xml</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{3956B539-ADCC-4ED6-B300-D6049E4BBCBF}" Name="Profil Stacji.xml">
+      <DtsConnectionManagerID>Profil Stacji.xml</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{628C0F2D-6271-42F0-BC48-18C61D34D5CE}" Name="Profil Wypożyczeń">
+      <DtsConnectionManagerID>Profil Wypożyczeń</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{7B19B3C7-D2EF-4EEF-B67B-965996DD94A6}" Name="Profil Wypożyczeń.xml">
+      <DtsConnectionManagerID>Profil Wypożyczeń.xml</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table Schema="dbo" Table="weather" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table Schema="dbo" Table="weather" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table Schema="dbo" Table="weather" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table Schema="dbo" Table="weather" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table Schema="dbo" Table="weather" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="-1" />
+        <Column Name="temp" SqlDbType="NVarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="-1" />
+        <Column Name="precip" SqlDbType="NVarChar" MaxLength="-1" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="name" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="datetime" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="tempmax" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="tempmin" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="feelslikemax" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="feelslikemin" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="feelslike" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="dew" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="humidity" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="precipprob" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="precipcover" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="preciptype" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>827</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="snow" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="snowdepth" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="windgust" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="windspeed" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="winddir" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="sealevelpressure" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="cloudcover" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="visibility" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="solarradiation" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="solarenergy" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="uvindex" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="severerisk" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>619</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="sunrise" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="sunset" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="moonphase" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="conditions" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="description" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="icon" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="stations" SqlDbType="NVarChar" MaxLength="200" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="datetime" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2020-05-01T00:00:00.0000000</MinValue>
+        <MaxValue>2024-08-31T00:00:00.0000000</MaxValue>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="tempmax" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-6.2</MinValue>
+        <MaxValue>39.3</MaxValue>
+        <Mean>20.9243055555555</Mean>
+        <StdDev>9.26184384513614</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="tempmin" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-12.9</MinValue>
+        <MaxValue>27.5</MaxValue>
+        <Mean>12.0255681818182</Mean>
+        <StdDev>8.81585586896826</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="feelslikemax" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-11.1</MinValue>
+        <MaxValue>43.4</MaxValue>
+        <Mean>21.1448863636363</Mean>
+        <StdDev>10.6751279940387</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="feelslikemin" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-20.2</MinValue>
+        <MaxValue>31</MaxValue>
+        <Mean>10.6772727272727</Mean>
+        <StdDev>10.445575697533</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="feelslike" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-16.4</MinValue>
+        <MaxValue>36.3</MaxValue>
+        <Mean>15.7004419191919</Mean>
+        <StdDev>10.2956279853532</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="dew" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-19.2</MinValue>
+        <MaxValue>24.2</MaxValue>
+        <Mean>8.70631313131313</Mean>
+        <StdDev>9.72570583987439</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="humidity" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>24.3</MinValue>
+        <MaxValue>96.9</MaxValue>
+        <Mean>63.7582702020202</Mean>
+        <StdDev>13.582662459273</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="precipprob" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>100</MaxValue>
+        <Mean>39.709595959596</Mean>
+        <StdDev>48.929618685263</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="precipcover" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>95.83</MaxValue>
+        <Mean>9.15144570707071</Mean>
+        <StdDev>16.3719280561605</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="snow" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>9.3</MaxValue>
+        <Mean>0.0503156565656566</Mean>
+        <StdDev>0.508401536763172</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="snowdepth" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>8.2</MaxValue>
+        <Mean>0.0746843434343434</Mean>
+        <StdDev>0.52734256241907</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="windgust" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>5.4</MinValue>
+        <MaxValue>96.1</MaxValue>
+        <Mean>37.9267676767676</Mean>
+        <StdDev>15.7036094305754</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="windspeed" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>8.9</MinValue>
+        <MaxValue>58.5</MaxValue>
+        <Mean>23.8143308080808</Mean>
+        <StdDev>7.74167297397805</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="winddir" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0.3</MinValue>
+        <MaxValue>358.9</MaxValue>
+        <Mean>198.218055555556</Mean>
+        <StdDev>101.285036099284</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="sealevelpressure" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>993.4</MinValue>
+        <MaxValue>1038.6</MaxValue>
+        <Mean>1017.25801767677</Mean>
+        <StdDev>6.64914070257367</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="cloudcover" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>100</MaxValue>
+        <Mean>63.8027146464647</Mean>
+        <StdDev>23.9575950917485</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="visibility" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>4.8</MinValue>
+        <MaxValue>16</MaxValue>
+        <Mean>15.3123106060607</Mean>
+        <StdDev>1.51244624730824</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="solarradiation" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2.9</MinValue>
+        <MaxValue>330.8</MaxValue>
+        <Mean>108.755744949495</Mean>
+        <StdDev>65.5959380465566</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="solarenergy" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0.1</MinValue>
+        <MaxValue>28.7</MaxValue>
+        <Mean>9.37777777777778</Mean>
+        <StdDev>5.68115448424434</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="uvindex" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>10</MaxValue>
+        <Mean>5.14204545454545</Mean>
+        <StdDev>2.55334992042135</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="severerisk" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>5</MinValue>
+        <MaxValue>100</MaxValue>
+        <Mean>16.3367875647668</Mean>
+        <StdDev>15.4509266298727</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="sunrise" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2020-05-01T06:09:41.0000000</MinValue>
+        <MaxValue>2024-08-31T06:36:39.0000000</MaxValue>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="sunset" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2020-05-01T20:01:16.0000000</MinValue>
+        <MaxValue>2024-08-31T19:39:17.0000000</MaxValue>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="moonphase" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>0.98</MaxValue>
+        <Mean>0.485681818181818</Mean>
+        <StdDev>0.287968835597677</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="name" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>17</MinLength>
+        <MaxLength>17</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>1584</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="preciptype" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>4</MinLength>
+        <MaxLength>26</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>9</Length>
+            <Count>39</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>26</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>12</Length>
+            <Count>10</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>4</Length>
+            <Count>699</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>22</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>5</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>8</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="conditions" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>5</MinLength>
+        <MaxLength>65</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>46</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>65</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>19</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>5</Length>
+            <Count>78</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>22</Length>
+            <Count>401</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>33</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>840</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>60</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>54</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>20</Length>
+            <Count>17</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>28</Length>
+            <Count>17</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>14</Length>
+            <Count>188</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>8</Length>
+            <Count>37</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="description" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>26</MinLength>
+        <MaxLength>82</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>52</Length>
+            <Count>8</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>72</Length>
+            <Count>13</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>66</Length>
+            <Count>6</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>32</Length>
+            <Count>37</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>26</Length>
+            <Count>64</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>43</Length>
+            <Count>85</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>58</Length>
+            <Count>141</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>81</Length>
+            <Count>7</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>44</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>50</Length>
+            <Count>18</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>61</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>65</Length>
+            <Count>7</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>73</Length>
+            <Count>55</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>36</Length>
+            <Count>76</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>42</Length>
+            <Count>73</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>56</Length>
+            <Count>9</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>59</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>82</Length>
+            <Count>6</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>33</Length>
+            <Count>778</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>53</Length>
+            <Count>33</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>71</Length>
+            <Count>9</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>60</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>54</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>80</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>74</Length>
+            <Count>25</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>57</Length>
+            <Count>97</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>51</Length>
+            <Count>28</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="icon" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>4</MinLength>
+        <MaxLength>17</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>9</Length>
+            <Count>78</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>37</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>4</Length>
+            <Count>631</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>838</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="stations" SqlDbType="NVarChar" MaxLength="200" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>49</MinLength>
+        <MaxLength>108</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>92</Length>
+            <Count>12</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>72</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>78</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>66</Length>
+            <Count>11</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>55</Length>
+            <Count>17</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>98</Length>
+            <Count>7</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>49</Length>
+            <Count>54</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>67</Length>
+            <Count>6</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>107</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>84</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>61</Length>
+            <Count>20</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>90</Length>
+            <Count>101</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>104</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>96</Length>
+            <Count>17</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>79</Length>
+            <Count>68</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>73</Length>
+            <Count>182</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>85</Length>
+            <Count>26</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>62</Length>
+            <Count>205</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>56</Length>
+            <Count>725</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>108</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>102</Length>
+            <Count>5</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>91</Length>
+            <Count>5</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>103</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>97</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>68</Length>
+            <Count>83</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>80</Length>
+            <Count>5</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>74</Length>
+            <Count>16</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="name" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Washington,DC,USA</Value>
+            <Count>1584</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <KeyColumns>
+          <Column Name="datetime" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="datetime" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1584</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="preciptype" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>10</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>freezingrain</Value>
+            <Count>10</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>rain</Value>
+            <Count>687</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>snow</Value>
+            <Count>12</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>rain,freezingrain</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>rain,snow</Value>
+            <Count>39</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="uvindex" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>11</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>0</Value>
+            <Count>21</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>9</Value>
+            <Count>133</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>135</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6</Value>
+            <Count>203</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7</Value>
+            <Count>193</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>149</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10</Value>
+            <Count>36</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4</Value>
+            <Count>180</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5</Value>
+            <Count>231</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>139</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8</Value>
+            <Count>164</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <KeyColumns>
+          <Column Name="sunrise" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="sunrise" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1584</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <KeyColumns>
+          <Column Name="sunset" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="sunset" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1584</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="conditions" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>14</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Rain, Partially cloudy</Value>
+            <Count>399</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Snow, Rain, Overcast</Value>
+            <Count>17</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Overcast</Value>
+            <Count>37</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Snow, Rain, Partially cloudy</Value>
+            <Count>17</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Partially cloudy</Value>
+            <Count>840</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Snow, Partially cloudy</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Clear</Value>
+            <Count>78</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rain, Overcast</Value>
+            <Count>188</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="description" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>46</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Partly cloudy throughout the day with rain clearing later.</Value>
+            <Count>37</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cloudy skies throughout the day with rain clearing later.</Value>
+            <Count>17</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Partly cloudy throughout the day with early morning rain.</Value>
+            <Count>62</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Partly cloudy throughout the day with morning rain.</Value>
+            <Count>22</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cloudy skies throughout the day with rain.</Value>
+            <Count>73</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cloudy skies throughout the day.</Value>
+            <Count>37</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Partly cloudy throughout the day with late afternoon rain.</Value>
+            <Count>94</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cloudy skies throughout the day with late afternoon rain.</Value>
+            <Count>14</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Partly cloudy throughout the day with afternoon rain.</Value>
+            <Count>27</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cloudy skies throughout the day with early morning rain.</Value>
+            <Count>9</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Partly cloudy throughout the day with rain or snow clearing later.</Value>
+            <Count>5</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Becoming cloudy in the afternoon.</Value>
+            <Count>98</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cloudy skies throughout the day with a chance of rain or snow throughout the day.</Value>
+            <Count>7</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Becoming cloudy in the afternoon with rain.</Value>
+            <Count>6</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Partly cloudy throughout the day with morning rain or snow.</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Partly cloudy throughout the day with early morning snow or rain.</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Partly cloudy throughout the day with rain or snow in the morning and afternoon.</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cloudy skies throughout the day with rain or snow.</Value>
+            <Count>8</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cloudy skies throughout the day with rain or snow clearing later.</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Partly cloudy throughout the day with rain.</Value>
+            <Count>79</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Partly cloudy throughout the day.</Value>
+            <Count>680</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Partly cloudy throughout the day with morning snow.</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Clear conditions throughout the day.</Value>
+            <Count>76</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cloudy skies throughout the day with afternoon rain.</Value>
+            <Count>8</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Clearing in the afternoon with early morning rain.</Value>
+            <Count>9</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Clearing in the afternoon with morning rain.</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cloudy skies throughout the day with a chance of rain throughout the day.</Value>
+            <Count>55</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Clearing in the afternoon.</Value>
+            <Count>64</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Becoming cloudy in the afternoon with early morning rain.</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Becoming cloudy in the afternoon with afternoon rain.</Value>
+            <Count>6</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cloudy skies throughout the day with rain in the morning and afternoon.</Value>
+            <Count>9</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Becoming cloudy in the afternoon with late afternoon rain.</Value>
+            <Count>9</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Partly cloudy throughout the day with a chance of rain or snow throughout the day.</Value>
+            <Count>6</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Partly cloudy throughout the day with a chance of rain throughout the day.</Value>
+            <Count>25</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Partly cloudy throughout the day with rain in the morning and afternoon.</Value>
+            <Count>13</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="icon" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>6</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>partly-cloudy-day</Value>
+            <Count>838</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>clear-day</Value>
+            <Count>78</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>cloudy</Value>
+            <Count>37</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>wind</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>rain</Value>
+            <Count>596</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>snow</Value>
+            <Count>33</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="weather" RowCount="1584" />
+        <Column Name="stations" SqlDbType="NVarChar" MaxLength="200" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>143</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>72405013743,KDCA,72403793728,72403093738,72406093721,F0198,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>C6294,KDCA,72405013743,72403793728,D6279,F0198,KADW,KDAA,74594013705</Value>
+            <Count>5</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>C6294,KDCA,72405013743,72403793728,D6279,F0198,KGAI,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>C6294,KDCA,72405013743,72403793728,D6279,KADW,KDAA,74594013705</Value>
+            <Count>6</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>C6294,KDCA,72405013743,72403793728,F0198,KADW,KDAA,74594013705</Value>
+            <Count>9</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>C6294,KDCA,72405013743,72403793728,F0198,KADW,KDAA,AS365,74594013705</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>C6294,KDCA,72405013743,72403793728,F0198,KGAI,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>C6294,KDCA,72405013743,72403793728,KADW,KDAA,74594013705</Value>
+            <Count>6</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>C6294,KDCA,72405013743,D6279,72403793728,KADW,KDAA,74594013705</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>C6294,KDCA,72405013743,D6279,72403793728,KGAI,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>C6294,KDCA,72405013743,KGAI,KADW,KDAA,AS365,72033493764</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,72403093738,72406093721,KADW,KDAA,F8307,72033493764,74594013705</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,72403093738,72406093721,KGAI,KADW,KDAA,F8307,72033493764,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,72403093738,F0198,72406093721,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,72403093738,F0198,72406093721,KADW,KDAA,AS365,72033493764,74594013705</Value>
+            <Count>5</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,72403093738,KGAI,KADW,KDAA,72033493764,F8307,74594013705</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,72403093738,KGAI,KADW,KDAA,AS365,72033493764</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,D6279,72403093738,KGAI,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,D6279,F0198,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,D6279,F0198,KADW,KDAA,74594013705</Value>
+            <Count>39</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,D6279,F0198,KADW,KDAA,AS365,72033493764,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,D6279,F0198,KADW,KDAA,AS365,74594013705</Value>
+            <Count>11</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,D6279,F0198,KGAI,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>8</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,D6279,F0198,KGAI,KADW,KDAA,AS365,72033493764,74594013705</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,D6279,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>8</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,D6279,KADW,KDAA,74594013705</Value>
+            <Count>88</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,D6279,KADW,KDAA,AS365,74594013705</Value>
+            <Count>8</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,D6279,KADW,KDAA,F8307,74594013705</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,D6279,KGAI,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>20</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,D6279,KGAI,KADW,KDAA,72033493764,F8307,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,F0198,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>8</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,F0198,KADW,KDAA,74594013705</Value>
+            <Count>161</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,F0198,KADW,KDAA,AS365,72033493764,74594013705</Value>
+            <Count>11</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,F0198,KADW,KDAA,AS365,74594013705</Value>
+            <Count>133</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,F0198,KADW,KDAA,F8307,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,F0198,KGAI,AS365,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,F0198,KGAI,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>27</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,F0198,KGAI,KADW,KDAA,AS365,72033493764,74594013705</Value>
+            <Count>38</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,F0198,KGAI,KDAA,KADW,AS365,72033493764,74594013705</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,KADW,KDAA,AS365,72033493764,74594013705</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,KADW,KDAA,AS365,74594013705</Value>
+            <Count>30</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,KADW,KDAA,F8307,72033493764,74594013705</Value>
+            <Count>7</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,KADW,KDAA,F8307,74594013705</Value>
+            <Count>198</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,KGAI,KADW,72033493764,F8307,74594013705</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,KGAI,KADW,KDAA,72033493764,F8307,74594013705</Value>
+            <Count>17</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,KGAI,KADW,KDAA,AS365,72033493764</Value>
+            <Count>5</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,KGAI,KADW,KDAA,AS365,72033493764,74594013705</Value>
+            <Count>9</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,KGAI,KADW,KDAA,F8307,72033493764,74594013705</Value>
+            <Count>32</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,72403793728,KGAI,KDAA,KADW,72033493764,F8307,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,D6279,72403793728,72403093738,72406093721,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,D6279,72403793728,72403093738,KGAI,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>10</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,D6279,72403793728,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>29</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,D6279,72403793728,KADW,KDAA,74594013705</Value>
+            <Count>237</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,D6279,72403793728,KGAI,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>65</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,D6279,72403793728,KGAI,KADW,KDAA,AS365,72033493764</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,D6279,72403793728,KGAI,KADW,KDAA,AS365,72033493764,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,D6279,KGAI,KADW,72033493764,74594013705</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,D6279,KGAI,KADW,KDAA,AS365,72033493764</Value>
+            <Count>12</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,D6279,KGAI,KADW,KDAA,AS365,72033493764,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,F0198,KGAI,KADW,KDAA,AS365,72033493764</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,KGAI,KADW,KDAA,AS365,72033493764</Value>
+            <Count>53</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KDCA,72405013743,KGAI,KADW,KDAA,AS365,72033493764,74594013705</Value>
+            <Count>12</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KIAD,KDCA,72405013743,72403093738,72403793728,KGAI,KADW,KDAA,72033493764,F8307,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KIAD,KDCA,72405013743,72403093738,D6279,KGAI,KADW,KDAA,AS365,72033493764</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KIAD,KDCA,72405013743,72403093738,KGAI,KADW,KDAA,AS365,72033493764</Value>
+            <Count>11</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KIAD,KDCA,72405013743,72403093738,KGAI,KADW,KDAA,AS365,72033493764,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KIAD,KDCA,72405013743,72403793728,72403093738,D6279,F0198,KGAI,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KIAD,KDCA,72405013743,72403793728,72403093738,F0198,KGAI,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>18</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KIAD,KDCA,72405013743,72403793728,72403093738,F0198,KGAI,KADW,KDAA,AS365,72033493764,74594013705</Value>
+            <Count>8</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KIAD,KDCA,72405013743,72403793728,72403093738,KGAI,KADW,KDAA,72033493764,F8307,74594013705</Value>
+            <Count>9</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KIAD,KDCA,72405013743,72403793728,72403093738,KGAI,KADW,KDAA,AS365,72033493764,74594013705</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KIAD,KDCA,72405013743,72403793728,72403093738,KGAI,KADW,KDAA,F8307,72033493764,74594013705</Value>
+            <Count>11</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KIAD,KDCA,72405013743,72403793728,D6279,72403093738,F0198,KGAI,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KIAD,KDCA,72405013743,72403793728,D6279,72403093738,KGAI,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>10</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KIAD,KDCA,72405013743,D6279,72403093738,72403793728,KGAI,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>5</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KIAD,KDCA,72405013743,D6279,72403093738,KGAI,KADW,72033493764,74594013705</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KIAD,KDCA,72405013743,D6279,72403793728,72403093738,KADW,KDAA,74594013705</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KIAD,KDCA,72405013743,D6279,72403793728,72403093738,KGAI,KADW,KDAA,72033493764,74594013705</Value>
+            <Count>40</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>
