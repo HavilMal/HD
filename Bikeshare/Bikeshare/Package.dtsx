@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{43F26743-23BF-493C-A1D8-1A2A02D2753E}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{3A9BB78A-F0FB-4F3F-8019-84F686B2A2D8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -88,7 +88,6 @@
       DTS:refId="Package\Profil Częstotliwości Użytkowania"
       DTS:CreationName="Microsoft.DataProfilingTask"
       DTS:Description="Data Profiling Task"
-      DTS:Disabled="True"
       DTS:DTSID="{EE2DD477-F309-4B6A-9361-CFDD09D9CA4C}"
       DTS:ExecutableType="Microsoft.DataProfilingTask"
       DTS:LocaleID="-1"
@@ -157,12 +156,13 @@
       DTS:refId="Package\Profil Pogody"
       DTS:CreationName="Microsoft.DataProfilingTask"
       DTS:Description="Data Profiling Task"
+      DTS:Disabled="True"
       DTS:DTSID="{74F44E54-566A-4739-B1F1-C9625F99E3B5}"
       DTS:ExecutableType="Microsoft.DataProfilingTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Profil Pogody"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -230,7 +230,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Profil Stacji"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -371,14 +371,6 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="164,42"
-          Id="Package\Profil Wypożyczeń"
-          TopLeft="186,187" />
-        <NodeLayout
-          Size="132,42"
-          Id="Package\Profil Stacji"
-          TopLeft="398,189" />
-        <NodeLayout
           Size="234,42"
           Id="Package\Profil Częstotliwości Użytkowania"
           TopLeft="603,188" />
@@ -386,6 +378,14 @@
           Size="141,42"
           Id="Package\Profil Pogody"
           TopLeft="893,191" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Profil Stacji"
+          TopLeft="398,189" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Profil Wypożyczeń"
+          TopLeft="186,187" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
