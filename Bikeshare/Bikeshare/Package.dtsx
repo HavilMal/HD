@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{3A9BB78A-F0FB-4F3F-8019-84F686B2A2D8}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{C4FC12E6-AFC9-4A90-91C1-4F6B09AC0468}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -35,6 +35,17 @@
         <DTS:ConnectionManager
           DTS:FileUsageType="1"
           DTS:ConnectionString="C:\PWR\HD\Bikeshare\Profil Częstotliwości Użytkowania.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Profil Pogody Godzinowej.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{4A7722E1-AD10-47BA-BEFA-A996ADA96151}"
+      DTS:ObjectName="Profil Pogody Godzinowej.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\PWR\HD\Bikeshare\Profil Pogody Godzinowej.xml" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -88,12 +99,13 @@
       DTS:refId="Package\Profil Częstotliwości Użytkowania"
       DTS:CreationName="Microsoft.DataProfilingTask"
       DTS:Description="Data Profiling Task"
+      DTS:Disabled="True"
       DTS:DTSID="{EE2DD477-F309-4B6A-9361-CFDD09D9CA4C}"
       DTS:ExecutableType="Microsoft.DataProfilingTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Profil Częstotliwości Użytkowania"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -162,7 +174,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Profil Pogody"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -204,6 +216,74 @@
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
         <Table Schema="dbo" Table="weather" />
         <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles />
+  </DataProfileOutput>
+</DataProfile>]]></ProfileInput>
+        </DataProfilingTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Profil Pogody Godzinowej"
+      DTS:CreationName="Microsoft.DataProfilingTask"
+      DTS:Description="Data Profiling Task"
+      DTS:DTSID="{77C5FE00-924E-4DF4-A630-BB1F77A11D46}"
+      DTS:ExecutableType="Microsoft.DataProfilingTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Profil Pogody Godzinowej"
+      DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <DataProfilingTaskData
+          Destination="Profil Pogody Godzinowej.xml"
+          OverwriteDestination="True">
+          <ProfileInput><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<DataProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources />
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table Schema="dbo" Table="weather_hourly" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table Schema="dbo" Table="weather_hourly" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table Schema="dbo" Table="weather_hourly" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table Schema="dbo" Table="weather_hourly" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
+        <Table Schema="dbo" Table="weather_hourly" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
           <Column IsWildCard="true" />
         </KeyColumns>
         <ThresholdSetting>Specified</ThresholdSetting>
@@ -369,7 +449,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="234,42"
           Id="Package\Profil Częstotliwości Użytkowania"
@@ -386,6 +466,10 @@
           Size="164,42"
           Id="Package\Profil Wypożyczeń"
           TopLeft="186,187" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Profil Pogody Godzinowej"
+          TopLeft="1086,187" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

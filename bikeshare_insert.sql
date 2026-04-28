@@ -44,4 +44,19 @@ WITH (
     CODEPAGE = '65001'
 );
 
+ALTER TABLE weather_hourly ALTER COLUMN time DATETIME NOT NULL;
 
+UPDATE weather_hourly 
+SET time = REPLACE(time, 'T', ' ');
+
+UPDATE weather_hourly 
+SET time = time + ':00' 
+WHERE LEN(time) = 16;
+
+
+ALTER TABLE weather_hourly ALTER COLUMN temperature FLOAT NULL;
+ALTER TABLE weather_hourly ALTER COLUMN wind_speed FLOAT NULL;
+ALTER TABLE weather_hourly ALTER COLUMN rain FLOAT NULL;
+ALTER TABLE weather_hourly ALTER COLUMN snowfall FLOAT NULL;
+ALTER TABLE weather_hourly ALTER COLUMN snow_depth FLOAT NULL;
+ALTER TABLE weather_hourly ALTER COLUMN precipitation FLOAT NULL;

@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">MATLAP</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAX1QnIhBoW0q5TFQwQBCHPgAAAAACAAAAAAAQZgAAAAEAACAAAABfmN7ABPLiomHY6Dh6jPo4JZ8ix6tBk1KLiNSPf7NxzAAAAAAOgAAAAAIAACAAAAAhFxonp185OmDgBntk/otUkgoo5CUdKxtmOQLuPjVE75AAAAASLbpQdBeFs11dEsEn5rWTuq4GEYLG0Bcy/VeSwwfZirerYyILGfasLjlbRKU6htaz5z+WIi1g0kY49PzGr81Bbs+vA/az0AwUSWZycufS6MsGOgMaeU5H8/RvFcsSqcHafV2Gssp2kF9232JcBhhwNJwUdh+bwV6aE73dKPmkm6DUJbyNI6gdA5Y3hptwPwxAAAAAbDJAL+fs3v/TWSGXnlVxM0eSidJABUEmikJBVgV1jJz6TWiKJQLcOsF6LYgaikuQIK4DdjdLIfesaOr78pO/9Q==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAX1QnIhBoW0q5TFQwQBCHPgAAAAACAAAAAAAQZgAAAAEAACAAAACphK5anWYFvOfbvtVAPh3bjv86ZQJX8Loxk4SNa/y3JQAAAAAOgAAAAAIAACAAAABeU78KAfXizEAFgJ7Yf2XwSWAjeK50Bg2nsteEPnzvF5AAAABAWtJwwh62AXvX8qBSA+sHMSu5gGgAichxmcyRUNCeozdfFK2/XzdcDESEzIz8pYAQaHiCb2ZPaTjpvgz2O1teSWZBGy3WCrSbmvSLICJ1EIJz8Ul+G7VSCUnrbtiVTQqoRcud4PqW7cQGM8DvbFII51YRSSkYsCmSsdPBymDs6mYFU7pmO6rbclAV0bJONWJAAAAA4NtEnTPJDsrX9wTrQs/wG8xGdsEHUbE4IvJgWZi6caTf/0o9El8La5Iy9/9k/SG6tHWrRUuRaIThTX71q4LWuQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -42,10 +42,10 @@
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">11</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">13</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{1D683D44-F860-45D1-894F-CA76021AD60C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{C4FC12E6-AFC9-4A90-91C1-4F6B09AC0468}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -197,6 +197,36 @@
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">C:\PWR\HD\Bikeshare\Profil Częstotliwości Użytkowania.xml</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.Profil Pogody Godzinowej.xml.ConnectByProxy">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.Profil Pogody Godzinowej.xml.ConnectionString">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\PWR\HD\Bikeshare\Profil Pogody Godzinowej.xml</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
