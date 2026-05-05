@@ -1,0 +1,2697 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/29/2026 1:32:57 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MATLAP"
+  DTS:CreatorName="MATLAP\abere"
+  DTS:DTSID="{C50FA2C4-7394-4112-AF5E-AC66D38AF69F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{BEF41187-14FB-43C4-8351-00349CE5F9C3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Archiwum]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{6E5CD4B5-3142-4CDD-88BC-BDFCEA416093}"
+      DTS:ObjectName="Archiwum">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="2"
+          DTS:ConnectionString="C:\PWR\HD\Lab08\Archiwum" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.OLTP]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9B0367EE-2C6C-4B74-BF5C-836807A33BD0}"
+      DTS:ObjectName="localhost.OLTP">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=OLTP;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{9B0367EE-2C6C-4B74-BF5C-836807A33BD0}localhost.OLTP;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.StudPoczekalnia]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6D60D64F-BA65-46C5-9B29-29991B2BDF17}"
+      DTS:ObjectName="localhost.StudPoczekalnia">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=StudPoczekalnia;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{6D60D64F-BA65-46C5-9B29-29991B2BDF17}localhost.StudPoczekalnia;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Stud do Archiwum]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{2C7B98B5-FB6A-4023-8A55-ACE7154FBC48}"
+      DTS:ObjectName="Stud do Archiwum">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::StudTxtPath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\PWR\HD\Lab08\Dane źródłowe\Stud01.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[StudManager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F7AFBFBB-8A4D-4547-A0A0-B4073727CF13}"
+      DTS:ObjectName="StudManager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::StudTxtPath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="C:\PWR\HD\Lab08\Dane źródłowe\Stud01.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Lp "
+              DTS:DTSID="{8A24A625-CBA2-4879-8F43-FA5B26DC150A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nr albumu"
+              DTS:DTSID="{F0040ECC-0DAC-41D2-8E6A-F5055D3BDAA8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nazwisko"
+              DTS:DTSID="{59D2534E-B6B1-4CC5-B31E-0C454C98AC62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Imiona"
+              DTS:DTSID="{803FACA9-EADE-459A-A435-CB0894F1AE25}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Rok"
+              DTS:DTSID="{381B7C95-6031-4078-B9CB-A62732A99541}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1D4AAF67-2751-4665-A9E7-F41930FBEF55}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="StudTxtPath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\PWR\HD\Lab08\Dane źródłowe\Stud01.txt</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Czyszczenie Poczekalni"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{71013216-D814-41EF-A767-07C527E4A673}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Czyszczenie Poczekalni"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6D60D64F-BA65-46C5-9B29-29991B2BDF17}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[StudTmp]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Model Produktu"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{EE2542F1-73DA-4897-B7A3-81851D058F10}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Model Produktu"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Model Produktu\Brak modelu"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Brak modelu"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Model Produktu\Brak modelu.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Model Produktu\Brak modelu.Inputs[Conditional Split Input].Columns[ProductModelID]"
+                      cachedDataType="i4"
+                      cachedName="ProductModelID"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductModelID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Model Produktu\Brak modelu.Outputs[Brak Modelu]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Brak Modelu"
+                  synchronousInputId="Package\Model Produktu\Brak modelu.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductModelID]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(ProductModelID)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Model Produktu\Brak modelu.Outputs[Jest Model]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Jest Model"
+                  synchronousInputId="Package\Model Produktu\Brak modelu.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Model Produktu\Brak modelu.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Model Produktu\Brak modelu.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Model Produktu\Brak modelu.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\Brak modelu.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Brak modelu.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\Brak modelu.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Model Produktu\Dane produktów"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Dane produktów"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Production].[Product]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Model Produktu\Dane produktów.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.OLTP]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.OLTP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      name="ProductID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      length="50"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[ProductNumber]"
+                      length="25"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductNumber]"
+                      name="ProductNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[MakeFlag]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[MakeFlag]"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[MakeFlag]"
+                      name="MakeFlag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[FinishedGoodsFlag]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[FinishedGoodsFlag]"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[FinishedGoodsFlag]"
+                      name="FinishedGoodsFlag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[Color]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[Color]"
+                      length="15"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[Color]"
+                      name="Color"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[SafetyStockLevel]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[SafetyStockLevel]"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[SafetyStockLevel]"
+                      name="SafetyStockLevel"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ReorderPoint]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[ReorderPoint]"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ReorderPoint]"
+                      name="ReorderPoint"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[StandardCost]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[StandardCost]"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[StandardCost]"
+                      name="StandardCost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ListPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[ListPrice]"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ListPrice]"
+                      name="ListPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[Size]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[Size]"
+                      length="5"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[Size]"
+                      name="Size"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[SizeUnitMeasureCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[SizeUnitMeasureCode]"
+                      length="3"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[SizeUnitMeasureCode]"
+                      name="SizeUnitMeasureCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[WeightUnitMeasureCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[WeightUnitMeasureCode]"
+                      length="3"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[WeightUnitMeasureCode]"
+                      name="WeightUnitMeasureCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[Weight]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[Weight]"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[Weight]"
+                      name="Weight"
+                      precision="8"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[DaysToManufacture]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[DaysToManufacture]"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[DaysToManufacture]"
+                      name="DaysToManufacture"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductLine]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[ProductLine]"
+                      length="2"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductLine]"
+                      name="ProductLine"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductSubcategoryID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[ProductSubcategoryID]"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductSubcategoryID]"
+                      name="ProductSubcategoryID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductModelID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[ProductModelID]"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductModelID]"
+                      name="ProductModelID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[rowguid]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[rowguid]"
+                      name="rowguid"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[ProductNumber]"
+                      dataType="wstr"
+                      length="25"
+                      name="ProductNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[MakeFlag]"
+                      dataType="bool"
+                      name="MakeFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[FinishedGoodsFlag]"
+                      dataType="bool"
+                      name="FinishedGoodsFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[Color]"
+                      dataType="wstr"
+                      length="15"
+                      name="Color" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[SafetyStockLevel]"
+                      dataType="i2"
+                      name="SafetyStockLevel" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[ReorderPoint]"
+                      dataType="i2"
+                      name="ReorderPoint" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[StandardCost]"
+                      dataType="cy"
+                      name="StandardCost" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[ListPrice]"
+                      dataType="cy"
+                      name="ListPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[Size]"
+                      dataType="wstr"
+                      length="5"
+                      name="Size" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[SizeUnitMeasureCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="SizeUnitMeasureCode" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[WeightUnitMeasureCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="WeightUnitMeasureCode" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[Weight]"
+                      dataType="numeric"
+                      name="Weight"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[DaysToManufacture]"
+                      dataType="i4"
+                      name="DaysToManufacture" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[ProductLine]"
+                      dataType="wstr"
+                      length="2"
+                      name="ProductLine" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[Class]"
+                      dataType="wstr"
+                      length="2"
+                      name="Class" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[Style]"
+                      dataType="wstr"
+                      length="2"
+                      name="Style" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[ProductSubcategoryID]"
+                      dataType="i4"
+                      name="ProductSubcategoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[ProductModelID]"
+                      dataType="i4"
+                      name="ProductModelID" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[SellStartDate]"
+                      dataType="dbTimeStamp"
+                      name="SellStartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[SellEndDate]"
+                      dataType="dbTimeStamp"
+                      name="SellEndDate" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[DiscontinuedDate]"
+                      dataType="dbTimeStamp"
+                      name="DiscontinuedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                      dataType="guid"
+                      name="rowguid" />
+                    <externalMetadataColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      name="ProductID" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ProductNumber]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ProductNumber]"
+                      name="ProductNumber" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[MakeFlag]"
+                      dataType="bool"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[MakeFlag]"
+                      name="MakeFlag" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[FinishedGoodsFlag]"
+                      dataType="bool"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[FinishedGoodsFlag]"
+                      name="FinishedGoodsFlag" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[Color]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[Color]"
+                      name="Color" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[SafetyStockLevel]"
+                      dataType="i2"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[SafetyStockLevel]"
+                      name="SafetyStockLevel" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ReorderPoint]"
+                      dataType="i2"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ReorderPoint]"
+                      name="ReorderPoint" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[StandardCost]"
+                      dataType="cy"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[StandardCost]"
+                      name="StandardCost" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ListPrice]"
+                      dataType="cy"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ListPrice]"
+                      name="ListPrice" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[Size]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[Size]"
+                      name="Size" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[SizeUnitMeasureCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[SizeUnitMeasureCode]"
+                      name="SizeUnitMeasureCode" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[WeightUnitMeasureCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[WeightUnitMeasureCode]"
+                      name="WeightUnitMeasureCode" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[Weight]"
+                      dataType="numeric"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[Weight]"
+                      name="Weight"
+                      precision="8"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[DaysToManufacture]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[DaysToManufacture]"
+                      name="DaysToManufacture" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ProductLine]"
+                      dataType="wstr"
+                      length="2"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ProductLine]"
+                      name="ProductLine" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ProductSubcategoryID]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ProductSubcategoryID]"
+                      name="ProductSubcategoryID" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ProductModelID]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ProductModelID]"
+                      name="ProductModelID" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[rowguid]"
+                      dataType="guid"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[rowguid]"
+                      name="rowguid" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Model Produktu\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Model Produktu\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Model Produktu\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Model Produktu\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Model Produktu\Derived Column.Outputs[Derived Column Output].Columns[ModelProduktu]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="11"
+                      lineageId="Package\Model Produktu\Derived Column.Outputs[Derived Column Output].Columns[ModelProduktu]"
+                      name="ModelProduktu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Brak Modelu"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Brak Modelu"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Model Produktu\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Model Produktu\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Model Produktu\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Model Produktu\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Model Produktu\OLE DB Destination.Connections[OleDbConnection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Model Produktu\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <externalMetadataColumns
+                    isUsed="True" />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Model Produktu\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Model Produktu\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Model Produktu\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Model Produktu\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Model Produktu\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Model Produktu\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[ProductNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="ProductNumber"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductNumber]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductNumber]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[MakeFlag]"
+                      cachedDataType="bool"
+                      cachedName="MakeFlag"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[MakeFlag]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[MakeFlag]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[FinishedGoodsFlag]"
+                      cachedDataType="bool"
+                      cachedName="FinishedGoodsFlag"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[FinishedGoodsFlag]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[FinishedGoodsFlag]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[Color]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Color"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[Color]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[Color]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[SafetyStockLevel]"
+                      cachedDataType="i2"
+                      cachedName="SafetyStockLevel"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[SafetyStockLevel]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[SafetyStockLevel]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[ReorderPoint]"
+                      cachedDataType="i2"
+                      cachedName="ReorderPoint"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ReorderPoint]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ReorderPoint]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[StandardCost]"
+                      cachedDataType="cy"
+                      cachedName="StandardCost"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[StandardCost]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[StandardCost]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[ListPrice]"
+                      cachedDataType="cy"
+                      cachedName="ListPrice"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ListPrice]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ListPrice]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[Size]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="Size"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[Size]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[Size]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[SizeUnitMeasureCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="SizeUnitMeasureCode"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[SizeUnitMeasureCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[SizeUnitMeasureCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[WeightUnitMeasureCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="WeightUnitMeasureCode"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[WeightUnitMeasureCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[WeightUnitMeasureCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[Weight]"
+                      cachedDataType="numeric"
+                      cachedName="Weight"
+                      cachedPrecision="8"
+                      cachedScale="2"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[Weight]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[Weight]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[DaysToManufacture]"
+                      cachedDataType="i4"
+                      cachedName="DaysToManufacture"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[DaysToManufacture]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[DaysToManufacture]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[ProductLine]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="ProductLine"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductLine]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductLine]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[ProductSubcategoryID]"
+                      cachedDataType="i4"
+                      cachedName="ProductSubcategoryID"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductSubcategoryID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductSubcategoryID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[ProductModelID]"
+                      cachedDataType="i4"
+                      cachedName="ProductModelID"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductModelID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductModelID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[rowguid]"
+                      cachedDataType="guid"
+                      cachedName="rowguid"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[rowguid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[rowguid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 1].Columns[ModelProduktu]"
+                      cachedDataType="wstr"
+                      cachedLength="11"
+                      cachedName="ModelProduktu"
+                      lineageId="Package\Model Produktu\Derived Column.Outputs[Derived Column Output].Columns[ModelProduktu]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ModelProduktu]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Model Produktu\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[ProductNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="ProductNumber"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductNumber]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductNumber]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[MakeFlag]"
+                      cachedDataType="bool"
+                      cachedName="MakeFlag"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[MakeFlag]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[MakeFlag]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[FinishedGoodsFlag]"
+                      cachedDataType="bool"
+                      cachedName="FinishedGoodsFlag"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[FinishedGoodsFlag]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[FinishedGoodsFlag]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[Color]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Color"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[Color]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[Color]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[SafetyStockLevel]"
+                      cachedDataType="i2"
+                      cachedName="SafetyStockLevel"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[SafetyStockLevel]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[SafetyStockLevel]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[ReorderPoint]"
+                      cachedDataType="i2"
+                      cachedName="ReorderPoint"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ReorderPoint]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ReorderPoint]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[StandardCost]"
+                      cachedDataType="cy"
+                      cachedName="StandardCost"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[StandardCost]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[StandardCost]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[ListPrice]"
+                      cachedDataType="cy"
+                      cachedName="ListPrice"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ListPrice]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ListPrice]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[Size]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="Size"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[Size]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[Size]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[SizeUnitMeasureCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="SizeUnitMeasureCode"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[SizeUnitMeasureCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[SizeUnitMeasureCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[WeightUnitMeasureCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="WeightUnitMeasureCode"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[WeightUnitMeasureCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[WeightUnitMeasureCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[Weight]"
+                      cachedDataType="numeric"
+                      cachedName="Weight"
+                      cachedPrecision="8"
+                      cachedScale="2"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[Weight]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[Weight]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[DaysToManufacture]"
+                      cachedDataType="i4"
+                      cachedName="DaysToManufacture"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[DaysToManufacture]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[DaysToManufacture]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[ProductLine]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="ProductLine"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductLine]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductLine]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[ProductSubcategoryID]"
+                      cachedDataType="i4"
+                      cachedName="ProductSubcategoryID"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductSubcategoryID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductSubcategoryID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[ProductModelID]"
+                      cachedDataType="i4"
+                      cachedName="ProductModelID"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductModelID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductModelID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Model Produktu\Union All.Inputs[Union All Input 2].Columns[rowguid]"
+                      cachedDataType="guid"
+                      cachedName="rowguid"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[rowguid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[rowguid]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Model Produktu\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Model Produktu\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductID]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductID]"
+                      name="ProductID" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductNumber]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductNumber]"
+                      name="ProductNumber" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[MakeFlag]"
+                      dataType="bool"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[MakeFlag]"
+                      name="MakeFlag" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[FinishedGoodsFlag]"
+                      dataType="bool"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[FinishedGoodsFlag]"
+                      name="FinishedGoodsFlag" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[Color]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[Color]"
+                      name="Color" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[SafetyStockLevel]"
+                      dataType="i2"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[SafetyStockLevel]"
+                      name="SafetyStockLevel" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ReorderPoint]"
+                      dataType="i2"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ReorderPoint]"
+                      name="ReorderPoint" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[StandardCost]"
+                      dataType="cy"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[StandardCost]"
+                      name="StandardCost" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ListPrice]"
+                      dataType="cy"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ListPrice]"
+                      name="ListPrice" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[Size]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[Size]"
+                      name="Size" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[SizeUnitMeasureCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[SizeUnitMeasureCode]"
+                      name="SizeUnitMeasureCode" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[WeightUnitMeasureCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[WeightUnitMeasureCode]"
+                      name="WeightUnitMeasureCode" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[Weight]"
+                      dataType="numeric"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[Weight]"
+                      name="Weight"
+                      precision="8"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[DaysToManufacture]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[DaysToManufacture]"
+                      name="DaysToManufacture" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductLine]"
+                      dataType="wstr"
+                      length="2"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductLine]"
+                      name="ProductLine" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductSubcategoryID]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductSubcategoryID]"
+                      name="ProductSubcategoryID" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductModelID]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ProductModelID]"
+                      name="ProductModelID" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[rowguid]"
+                      dataType="guid"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[rowguid]"
+                      name="rowguid" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ModelProduktu]"
+                      dataType="wstr"
+                      length="11"
+                      lineageId="Package\Model Produktu\Union All.Outputs[Union All Output 1].Columns[ModelProduktu]"
+                      name="ModelProduktu" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Model Produktu\Wybór modelu"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Wybór modelu"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select ProductModelID, Name From [Production].[ProductModel];</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (Select ProductModelID, Name From [Production].[ProductModel];) [refTable]
+where [refTable].[ProductModelID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ProductModelID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Name" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductModelID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Model Produktu\Wybór modelu.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.OLTP]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.OLTP]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Model Produktu\Wybór modelu.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Model Produktu\Wybór modelu.Inputs[Lookup Input].Columns[ProductModelID]"
+                      cachedDataType="i4"
+                      cachedName="ProductModelID"
+                      lineageId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output].Columns[ProductModelID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">ProductModelID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Model Produktu\Wybór modelu.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Model Produktu\Wybór modelu.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Model Produktu\Wybór modelu.Outputs[Lookup Match Output].Columns[Model Produktu]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="50"
+                      lineageId="Package\Model Produktu\Wybór modelu.Outputs[Lookup Match Output].Columns[Model Produktu]"
+                      name="Model Produktu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Name</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Model Produktu\Wybór modelu.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Model Produktu\Wybór modelu.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Model Produktu\Wybór modelu.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Model Produktu\Wybór modelu.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Model Produktu\Wybór modelu.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\Wybór modelu.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Model Produktu\Wybór modelu.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Model Produktu\Wybór modelu.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Model Produktu.Paths[Brak Modelu]"
+              endId="Package\Model Produktu\Derived Column.Inputs[Derived Column Input]"
+              name="Brak Modelu"
+              startId="Package\Model Produktu\Brak modelu.Outputs[Brak Modelu]" />
+            <path
+              refId="Package\Model Produktu.Paths[Derived Column Output]"
+              endId="Package\Model Produktu\Union All.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\Model Produktu\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Model Produktu.Paths[Jest Model]"
+              endId="Package\Model Produktu\Wybór modelu.Inputs[Lookup Input]"
+              name="Jest Model"
+              startId="Package\Model Produktu\Brak modelu.Outputs[Jest Model]" />
+            <path
+              refId="Package\Model Produktu.Paths[Lookup Match Output]"
+              endId="Package\Model Produktu\Union All.Inputs[Union All Input 2]"
+              name="Lookup Match Output"
+              startId="Package\Model Produktu\Wybór modelu.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Model Produktu.Paths[OLE DB Source Output]"
+              endId="Package\Model Produktu\Brak modelu.Inputs[Conditional Split Input]"
+              name="OLE DB Source Output"
+              startId="Package\Model Produktu\Dane produktów.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Model Produktu.Paths[Union All Output 1]"
+              endId="Package\Model Produktu\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Union All Output 1"
+              startId="Package\Model Produktu\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Stud do Archiwum"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:Disabled="True"
+      DTS:DTSID="{1AF522A0-52E5-4032-9F96-EB61BF9C7960}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Stud do Archiwum">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{94C0E40D-6B2F-4C43-9770-87E37D9D3A65}"
+        DTS:ObjectName="{94C0E40D-6B2F-4C43-9770-87E37D9D3A65}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\PWR\HD\Lab08\Dane źródłowe" />
+            <FEFEProperty
+              FileSpec="stud*.txt" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Stud do Archiwum\StudTxt do Archiwum"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{EDDFF418-45FA-41AD-B08C-7F60E75E201D}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="StudTxt do Archiwum"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::StudTxtPath"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="Archiwum" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{38EADE6B-648B-4611-A03B-3489194EC7F7}"
+          DTS:ObjectName="{38EADE6B-648B-4611-A03B-3489194EC7F7}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::StudTxtPath" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Stud do DB"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:Disabled="True"
+      DTS:DTSID="{75043FC4-5C39-4038-A8F8-DDA6B7B9661B}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Stud do DB">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{D4EEE7B9-A21A-42F3-BB90-23E3766CA848}"
+        DTS:ObjectName="{D4EEE7B9-A21A-42F3-BB90-23E3766CA848}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\PWR\HD\Lab08\Dane źródłowe" />
+            <FEFEProperty
+              FileSpec="Stud*.txt" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Stud do DB\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{27A07FF8-9CD9-4509-8698-8E71BBA1E8D7}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Stud do DB\Data Flow Task\Stud do DB"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Stud do DB"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[StudTmp]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1250</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Stud do DB\Data Flow Task\Stud do DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[localhost.StudPoczekalnia]"
+                      connectionManagerRefId="Package.ConnectionManagers[localhost.StudPoczekalnia]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input].Columns[Lp ]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Lp "
+                          externalMetadataColumnId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input].ExternalColumns[Lp ]"
+                          lineageId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].Columns[Lp ]" />
+                        <inputColumn
+                          refId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input].Columns[Nr albumu]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Nr albumu"
+                          externalMetadataColumnId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input].ExternalColumns[Nr albumu]"
+                          lineageId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].Columns[Nr albumu]" />
+                        <inputColumn
+                          refId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input].Columns[Nazwisko]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Nazwisko"
+                          externalMetadataColumnId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input].ExternalColumns[Nazwisko]"
+                          lineageId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].Columns[Nazwisko]" />
+                        <inputColumn
+                          refId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input].Columns[Imiona]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Imiona"
+                          externalMetadataColumnId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input].ExternalColumns[Imiona]"
+                          lineageId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].Columns[Imiona]" />
+                        <inputColumn
+                          refId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input].Columns[Rok]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Rok"
+                          externalMetadataColumnId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input].ExternalColumns[Rok]"
+                          lineageId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].Columns[Rok]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input].ExternalColumns[Lp ]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Lp " />
+                        <externalMetadataColumn
+                          refId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input].ExternalColumns[Nr albumu]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Nr albumu" />
+                        <externalMetadataColumn
+                          refId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input].ExternalColumns[Nazwisko]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Nazwisko" />
+                        <externalMetadataColumn
+                          refId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input].ExternalColumns[Imiona]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Imiona" />
+                        <externalMetadataColumn
+                          refId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input].ExternalColumns[Rok]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Rok" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Stud do DB\Data Flow Task\Stud do DB.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Stud do DB\Data Flow Task\Stud do DB.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Stud do DB\Data Flow Task\Stud do DB.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Stud do DB\Data Flow Task\Stud do DB.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Stud do DB\Data Flow Task\Stud do DB.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Stud do DB\Data Flow Task\StudTxt"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1045"
+                  name="StudTxt"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Stud do DB\Data Flow Task\StudTxt.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[StudManager]"
+                      connectionManagerRefId="Package.ConnectionManagers[StudManager]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].Columns[Lp ]"
+                          codePage="1250"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].ExternalColumns[Lp ]"
+                          length="50"
+                          lineageId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].Columns[Lp ]"
+                          name="Lp "
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].Columns[Nr albumu]"
+                          codePage="1250"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].ExternalColumns[Nr albumu]"
+                          length="50"
+                          lineageId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].Columns[Nr albumu]"
+                          name="Nr albumu"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].Columns[Nazwisko]"
+                          codePage="1250"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].ExternalColumns[Nazwisko]"
+                          length="50"
+                          lineageId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].Columns[Nazwisko]"
+                          name="Nazwisko"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].Columns[Imiona]"
+                          codePage="1250"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].ExternalColumns[Imiona]"
+                          length="50"
+                          lineageId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].Columns[Imiona]"
+                          name="Imiona"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].Columns[Rok]"
+                          codePage="1250"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].ExternalColumns[Rok]"
+                          length="50"
+                          lineageId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].Columns[Rok]"
+                          name="Rok"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].ExternalColumns[Lp ]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Lp " />
+                        <externalMetadataColumn
+                          refId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].ExternalColumns[Nr albumu]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Nr albumu" />
+                        <externalMetadataColumn
+                          refId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].ExternalColumns[Nazwisko]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Nazwisko" />
+                        <externalMetadataColumn
+                          refId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].ExternalColumns[Imiona]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Imiona" />
+                        <externalMetadataColumn
+                          refId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output].ExternalColumns[Rok]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Rok" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1250"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Stud do DB\Data Flow Task.Paths[Flat File Source Output]"
+                  endId="Package\Stud do DB\Data Flow Task\Stud do DB.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Stud do DB\Data Flow Task\StudTxt.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{B4E8B45C-6769-4A59-BFE8-FA4D8F9B9FC1}"
+          DTS:ObjectName="{B4E8B45C-6769-4A59-BFE8-FA4D8F9B9FC1}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::StudTxtPath" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{4B7FFEB9-D3CC-419A-8C4D-3F9D72B9EF99}"
+      DTS:From="Package\Stud do DB"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Stud do Archiwum" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{EBFB8C81-4624-4025-AC81-DE6FCF29CF4C}"
+      DTS:From="Package\Czyszczenie Poczekalni"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Stud do DB" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Stud do Archiwum\StudTxt do Archiwum"
+          TopLeft="43,9" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="246,67"
+          Size="246,110"
+          Id="Package\Stud do Archiwum"
+          TopLeft="56,539" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Stud do DB\Data Flow Task"
+          TopLeft="37.5,6.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="213,104"
+          Size="213,147"
+          Id="Package\Stud do DB"
+          TopLeft="71,366" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="178.25,513">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Czyszczenie Poczekalni"
+          TopLeft="99,243" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="192,285">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.5,81"
+              Start="0,0"
+              End="-14.5,73.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.5"
+                    Point2="0,40.5"
+                    Point3="-4,40.5" />
+                  <mssgle:LineSegment
+                    End="-10.5,40.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.5,40.5"
+                    Point2="-14.5,40.5"
+                    Point3="-14.5,44.5" />
+                  <mssgle:LineSegment
+                    End="-14.5,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Model Produktu"
+          TopLeft="500.5,293" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Stud do DB\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Stud do DB\Data Flow Task\Stud do DB"
+          TopLeft="274,266" />
+        <NodeLayout
+          Size="115,42"
+          Id="Package\Stud do DB\Data Flow Task\StudTxt"
+          TopLeft="279,128" />
+        <EdgeLayout
+          Id="Package\Stud do DB\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="338.25,170">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,96"
+              Start="0,0"
+              End="0,88.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,88.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stud do DB\Data Flow Task\Stud do DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Model Produktu">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Model Produktu\Dane produktów"
+          TopLeft="290.5,133.5" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Model Produktu\Brak modelu"
+          TopLeft="300,221" />
+        <EdgeLayout
+          Id="Package\Model Produktu.Paths[OLE DB Source Output]"
+          TopLeft="369,175.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.5"
+              Start="0,0"
+              End="0,38">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Model Produktu\Derived Column"
+          TopLeft="213.5,306.5" />
+        <EdgeLayout
+          Id="Package\Model Produktu.Paths[Brak Modelu]"
+          TopLeft="369,263">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-78.5,43.5"
+              Start="0,0"
+              End="-78.5,36">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.75"
+                    Point2="0,21.75"
+                    Point3="-4,21.75" />
+                  <mssgle:LineSegment
+                    End="-74.5,21.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-74.5,21.75"
+                    Point2="-78.5,21.75"
+                    Point3="-78.5,25.75" />
+                  <mssgle:LineSegment
+                    End="-78.5,36" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-66.87240234375,26.75,55.2448046875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Model Produktu\Wybór modelu"
+          TopLeft="521,317" />
+        <EdgeLayout
+          Id="Package\Model Produktu.Paths[Jest Model]"
+          TopLeft="390.666666666667,263">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="203.833333333333,54"
+              Start="0,0"
+              End="203.833333333333,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.9713467048711" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.9713467048711"
+                    Point2="0,21.9713467048711"
+                    Point3="4,21.9713467048711" />
+                  <mssgle:LineSegment
+                    End="199.833333333333,21.9713467048711" />
+                  <mssgle:CubicBezierSegment
+                    Point1="199.833333333333,21.9713467048711"
+                    Point2="203.833333333333,21.9713467048711"
+                    Point3="203.833333333333,25.9713467048711" />
+                  <mssgle:LineSegment
+                    End="203.833333333333,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="77.9928580729167,26.9713467048711,47.8476171875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Model Produktu\Union All"
+          TopLeft="401,443" />
+        <EdgeLayout
+          Id="Package\Model Produktu.Paths[Derived Column Output]"
+          TopLeft="290.5,348.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="171,94.5"
+              Start="0,0"
+              End="171,87">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.25"
+                    Point2="0,47.25"
+                    Point3="4,47.25" />
+                  <mssgle:LineSegment
+                    End="167,47.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="167,47.25"
+                    Point2="171,47.25"
+                    Point3="171,51.25" />
+                  <mssgle:LineSegment
+                    End="171,87" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Model Produktu.Paths[Lookup Match Output]"
+          TopLeft="594.5,359">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-114.166666666667,84"
+              Start="0,0"
+              End="-114.166666666667,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.742251223491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.742251223491"
+                    Point2="0,49.742251223491"
+                    Point3="-4,49.742251223491" />
+                  <mssgle:LineSegment
+                    End="-110.166666666667,49.742251223491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-110.166666666667,49.742251223491"
+                    Point2="-114.166666666667,49.742251223491"
+                    Point3="-114.166666666667,53.742251223491" />
+                  <mssgle:LineSegment
+                    End="-114.166666666667,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-105.274720052083,54.742251223491,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Model Produktu\OLE DB Destination"
+          TopLeft="375,573" />
+        <EdgeLayout
+          Id="Package\Model Produktu.Paths[Union All Output 1]"
+          TopLeft="461,485">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,88"
+              Start="0,0"
+              End="0,80.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,80.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,32.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Model Produktu\Dane produktów">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

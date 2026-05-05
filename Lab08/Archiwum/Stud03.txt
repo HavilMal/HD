@@ -1,0 +1,7 @@
+Lp.	Nr albumu	Nazwisko	Imiona	Rok
+12	3456	Szczęsny	Jarosław 	2
+11	3467	Świerczyński	Mateusz 	2
+15	3478	Tworzydło	Wojciech 	2
+16	3489	Ciepliski	Paweł	2
+17	3490	Mensa	Emmanuel	2
+18	3412	Mizera	Michałek	2

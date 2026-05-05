@@ -1,0 +1,7 @@
+Lp.	Nr albumu	Nazwisko	Imiona	Rok
+7	2345	Macudziński	Tomasz 	2
+8	2356	Marzec	Krzysztof Tomasz	2
+9	2367	Mensah	Emmanuel Hayford	2
+10	2378	Mizera	Michał	2
+11	2389	Ostrowski	Patryk 	2
+15	2390	Piechota	Piotr Grzegorz	5
