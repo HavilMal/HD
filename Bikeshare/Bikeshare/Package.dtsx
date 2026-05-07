@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{B0B92485-8A41-48C2-8C86-B5DF148795FF}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{382C3813-19B1-419E-AD38-225949DCDD30}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -105,7 +105,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Profil Częstotliwości Użytkowania"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -174,7 +174,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Profil Pogody"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -241,7 +241,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Profil Pogody Godzinowej"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -310,7 +310,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Profil Stacji"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -379,7 +379,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Profil Wypożyczeń"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
