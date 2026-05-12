@@ -8,6 +8,9 @@
     <DtsDataSource ID="{D4F74341-D09B-4033-9698-4406E9C98470}" Name="Profil Częstotliwości Użytkowania.xml">
       <DtsConnectionManagerID>Profil Częstotliwości Użytkowania.xml</DtsConnectionManagerID>
     </DtsDataSource>
+    <DtsDataSource ID="{4A7722E1-AD10-47BA-BEFA-A996ADA96151}" Name="Profil Pogody Godzinowej.xml">
+      <DtsConnectionManagerID>Profil Pogody Godzinowej.xml</DtsConnectionManagerID>
+    </DtsDataSource>
     <DtsDataSource ID="{38CAD5C0-D906-44BD-8977-D889277FCC0B}" Name="Profil Pogody.xml">
       <DtsConnectionManagerID>Profil Pogody.xml</DtsConnectionManagerID>
     </DtsDataSource>
@@ -27,37 +30,36 @@
     <Requests>
       <ColumnNullRatioProfileRequest ID="NullRatioReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table Schema="dbo" Table="station_list" />
+        <Table Schema="dbo" Table="Stacje Poczekalnia" />
         <Column IsWildCard="true" />
       </ColumnNullRatioProfileRequest>
       <ColumnStatisticsProfileRequest ID="StatisticsReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table Schema="dbo" Table="station_list" />
+        <Table Schema="dbo" Table="Stacje Poczekalnia" />
         <Column IsWildCard="true" />
       </ColumnStatisticsProfileRequest>
       <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table Schema="dbo" Table="station_list" />
+        <Table Schema="dbo" Table="Stacje Poczekalnia" />
         <Column IsWildCard="true" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
       </ColumnLengthDistributionProfileRequest>
       <ColumnValueDistributionProfileRequest ID="ValueDistReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table Schema="dbo" Table="station_list" />
+        <Table Schema="dbo" Table="Stacje Poczekalnia" />
         <Column IsWildCard="true" />
         <Option>FrequentValues</Option>
         <FrequentValueThreshold>0.001</FrequentValueThreshold>
       </ColumnValueDistributionProfileRequest>
       <CandidateKeyProfileRequest ID="KeyReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table Schema="dbo" Table="station_list" />
+        <Table Schema="dbo" Table="Stacje Poczekalnia" />
         <KeyColumns>
-          <Column IsWildCard="true" />
           <Column IsWildCard="true" />
         </KeyColumns>
         <ThresholdSetting>Specified</ThresholdSetting>
-        <KeyStrengthThreshold>0.8</KeyStrengthThreshold>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
         <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
         <MaxNumberOfViolations>100</MaxNumberOfViolations>
       </CandidateKeyProfileRequest>
@@ -67,20 +69,20 @@
     <Profiles>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="station_list" RowCount="-1" />
-        <Column Name="station_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="Stacje Poczekalnia" RowCount="916" />
+        <Column Name="station_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="station_list" RowCount="-1" />
-        <Column Name="station_name" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="Stacje Poczekalnia" RowCount="916" />
+        <Column Name="station_name" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="station_list" RowCount="916" />
-        <Column Name="station_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="Stacje Poczekalnia" RowCount="916" />
+        <Column Name="station_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <MinValue>30200</MinValue>
         <MaxValue>33200</MaxValue>
         <Mean>31645.5491266376</Mean>
@@ -88,8 +90,8 @@
       </ColumnStatisticsProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="station_list" RowCount="916" />
-        <Column Name="station_name" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="Stacje Poczekalnia" RowCount="916" />
+        <Column Name="station_name" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
         <MinLength>10</MinLength>
@@ -97,7 +99,7 @@
         <LengthDistribution>
           <LengthDistributionItem>
             <Length>23</Length>
-            <Count>49</Count>
+            <Count>50</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>46</Length>
@@ -213,7 +215,7 @@
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>22</Length>
-            <Count>39</Count>
+            <Count>38</Count>
           </LengthDistributionItem>
           <LengthDistributionItem>
             <Length>59</Length>
@@ -285,621 +287,10 @@
           </LengthDistributionItem>
         </LengthDistribution>
       </ColumnLengthDistributionProfile>
-      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
-        <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="station_list" RowCount="916" />
-        <KeyColumns>
-          <Column Name="station_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
-        </KeyColumns>
-        <IsExactKey>false</IsExactKey>
-        <KeyStrength>0.8820961</KeyStrength>
-        <KeyViolations>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31923</ColumnValue>
-            </ColumnValues>
-            <Count>3</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31908</ColumnValue>
-            </ColumnValues>
-            <Count>3</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31094</ColumnValue>
-            </ColumnValues>
-            <Count>3</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31220</ColumnValue>
-            </ColumnValues>
-            <Count>3</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31971</ColumnValue>
-            </ColumnValues>
-            <Count>3</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32600</ColumnValue>
-            </ColumnValues>
-            <Count>3</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31043</ColumnValue>
-            </ColumnValues>
-            <Count>3</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32601</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31040</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31030</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31027</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31015</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31014</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31006</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32288</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32279</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32270</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32261</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32250</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32243</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32242</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32228</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32220</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32215</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32214</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32213</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32211</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32204</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32203</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32083</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>32075</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31974</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31973</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31972</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31970</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31956</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31950</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31949</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31948</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31947</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31937</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31936</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31931</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31926</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31212</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31209</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31207</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31203</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31120</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31117</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31109</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31103</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31096</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31092</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31080</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31079</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31076</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31069</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31065</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31063</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31061</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31059</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31058</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31057</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31056</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31054</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31051</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31049</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31047</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31900</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31803</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31802</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31726</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31720</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31717</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31700</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31669</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31667</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31666</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31662</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31660</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31642</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31628</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31627</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31613</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31535</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31528</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31502</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31422</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31416</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31401</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31380</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31339</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31332</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31331</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31305</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31293</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31261</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31253</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-          <MultiColumnValueDistributionItem>
-            <ColumnValues>
-              <ColumnValue>31231</ColumnValue>
-            </ColumnValues>
-            <Count>2</Count>
-          </MultiColumnValueDistributionItem>
-        </KeyViolations>
-      </CandidateKeyProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="station_list" RowCount="916" />
-        <Column Name="station_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="Stacje Poczekalnia" RowCount="916" />
+        <Column Name="station_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NumberOfDistinctValues>808</NumberOfDistinctValues>
         <ValueDistribution>
           <ValueDistributionItem>
@@ -4138,9 +3529,9 @@
       </ColumnValueDistributionProfile>
       <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="station_list" RowCount="916" />
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="Stacje Poczekalnia" RowCount="916" />
         <KeyColumns>
-          <Column Name="station_name" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+          <Column Name="station_name" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         </KeyColumns>
         <IsExactKey>false</IsExactKey>
         <KeyStrength>0.9923581</KeyStrength>
@@ -4191,10 +3582,14 @@
       </CandidateKeyProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="station_list" RowCount="916" />
-        <Column Name="station_name" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="false" StringCompareOptions="0" />
+        <Table DataSource="localhost" Database="Bikeshare" Schema="dbo" Table="Stacje Poczekalnia" RowCount="916" />
+        <Column Name="station_name" SqlDbType="NVarChar" MaxLength="100" Precision="255" Scale="255" LCID="1045" CodePage="0" IsNullable="true" StringCompareOptions="0" />
         <NumberOfDistinctValues>909</NumberOfDistinctValues>
         <ValueDistribution>
+          <ValueDistributionItem>
+            <Value> S Scott St &amp; 13th St S</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>10th &amp; E St NW</Value>
             <Count>1</Count>
@@ -7213,10 +6608,6 @@
           </ValueDistributionItem>
           <ValueDistributionItem>
             <Value>S Reynolds St &amp; Edsall Rd</Value>
-            <Count>1</Count>
-          </ValueDistributionItem>
-          <ValueDistributionItem>
-            <Value>S Scott St &amp; 13th St S</Value>
             <Count>1</Count>
           </ValueDistributionItem>
           <ValueDistributionItem>

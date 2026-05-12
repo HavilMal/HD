@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{041C8AD8-25D9-0215-4A41-C397F812B162}|Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe.dwproj|C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\INternetSales.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{041C8AD8-25D9-0215-4A41-C397F812B162}|Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe.dwproj|solutionrelative:Lab7 - modele wielowymairowe\\INternetSales.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{041C8AD8-25D9-0215-4A41-C397F812B162}|Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe.dwproj|C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\Dim Product.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
       "RelativeMoniker": "D:0:0:{041C8AD8-25D9-0215-4A41-C397F812B162}|Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe.dwproj|solutionrelative:Lab7 - modele wielowymairowe\\Dim Product.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     },
     {
       "AbsoluteMoniker": "D:0:0:{041C8AD8-25D9-0215-4A41-C397F812B162}|Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe.dwproj|C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\Klient.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
       "RelativeMoniker": "D:0:0:{041C8AD8-25D9-0215-4A41-C397F812B162}|Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe.dwproj|solutionrelative:Lab7 - modele wielowymairowe\\Klient.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{041C8AD8-25D9-0215-4A41-C397F812B162}|Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe.dwproj|C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\INternetSales.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{041C8AD8-25D9-0215-4A41-C397F812B162}|Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe.dwproj|solutionrelative:Lab7 - modele wielowymairowe\\INternetSales.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     },
     {
       "AbsoluteMoniker": "D:0:0:{041C8AD8-25D9-0215-4A41-C397F812B162}|Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe.dwproj|C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\DW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,7 +38,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "InternetSales.cube [Design]",
               "DocumentMoniker": "C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\INternetSales.cube",
               "RelativeDocumentMoniker": "Lab7 - modele wielowymairowe\\INternetSales.cube",
@@ -50,7 +50,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Dim Product.dim [Design]",
               "DocumentMoniker": "C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\Dim Product.dim",
               "RelativeDocumentMoniker": "Lab7 - modele wielowymairowe\\Dim Product.dim",
@@ -62,7 +62,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Klient.dim [Design]",
               "DocumentMoniker": "C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\Klient.dim",
               "RelativeDocumentMoniker": "Lab7 - modele wielowymairowe\\Klient.dim",
@@ -81,8 +81,7 @@
               "ToolTip": "C:\\PWR\\HD\\Lab7 - modele wielowymairowe\\Lab7 - modele wielowymairowe\\DW.dsv [Design]",
               "RelativeToolTip": "Lab7 - modele wielowymairowe\\DW.dsv [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-04-24T11:47:22.36Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-04-24T11:47:22.36Z"
             }
           ]
         }

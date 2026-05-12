@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="MATLAP"
   DTS:CreatorName="MATLAP\abere"
-  DTS:DTSID="{C3C6CCF1-1C51-424C-9B70-FE119ABBE0C7}"
+  DTS:DTSID="{FB705957-DB81-4549-B0AE-85767F232144}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1010.2"
   DTS:LocaleID="1045"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="Profile"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{382C3813-19B1-419E-AD38-225949DCDD30}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{1ADB265A-4E9D-4FE3-868C-587B2BDE34E3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -105,7 +105,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Profil Częstotliwości Użytkowania"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -236,12 +236,13 @@
       DTS:refId="Package\Profil Pogody Godzinowej"
       DTS:CreationName="Microsoft.DataProfilingTask"
       DTS:Description="Data Profiling Task"
+      DTS:Disabled="True"
       DTS:DTSID="{77C5FE00-924E-4DF4-A630-BB1F77A11D46}"
       DTS:ExecutableType="Microsoft.DataProfilingTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Profil Pogody Godzinowej"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -305,12 +306,12 @@
       DTS:CreationName="Microsoft.DataProfilingTask"
       DTS:Description="Data Profiling Task"
       DTS:Disabled="True"
-      DTS:DTSID="{5E21CAB4-7542-4F3F-8F28-16280340C94B}"
+      DTS:DTSID="{8835B54B-201A-4A81-9803-D45D592E29E6}"
       DTS:ExecutableType="Microsoft.DataProfilingTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Profil Stacji"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -326,37 +327,36 @@
     <Requests>
       <ColumnNullRatioProfileRequest ID="NullRatioReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table Schema="dbo" Table="station_list" />
+        <Table Schema="dbo" Table="Stacje Poczekalnia" />
         <Column IsWildCard="true" />
       </ColumnNullRatioProfileRequest>
       <ColumnStatisticsProfileRequest ID="StatisticsReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table Schema="dbo" Table="station_list" />
+        <Table Schema="dbo" Table="Stacje Poczekalnia" />
         <Column IsWildCard="true" />
       </ColumnStatisticsProfileRequest>
       <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table Schema="dbo" Table="station_list" />
+        <Table Schema="dbo" Table="Stacje Poczekalnia" />
         <Column IsWildCard="true" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
       </ColumnLengthDistributionProfileRequest>
       <ColumnValueDistributionProfileRequest ID="ValueDistReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table Schema="dbo" Table="station_list" />
+        <Table Schema="dbo" Table="Stacje Poczekalnia" />
         <Column IsWildCard="true" />
         <Option>FrequentValues</Option>
         <FrequentValueThreshold>0.001</FrequentValueThreshold>
       </ColumnValueDistributionProfileRequest>
       <CandidateKeyProfileRequest ID="KeyReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table Schema="dbo" Table="station_list" />
+        <Table Schema="dbo" Table="Stacje Poczekalnia" />
         <KeyColumns>
-          <Column IsWildCard="true" />
           <Column IsWildCard="true" />
         </KeyColumns>
         <ThresholdSetting>Specified</ThresholdSetting>
-        <KeyStrengthThreshold>0.8</KeyStrengthThreshold>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
         <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
         <MaxNumberOfViolations>100</MaxNumberOfViolations>
       </CandidateKeyProfileRequest>
@@ -379,7 +379,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Profil Wypożyczeń"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -465,7 +465,7 @@
         <NodeLayout
           Size="132,42"
           Id="Package\Profil Stacji"
-          TopLeft="398,189" />
+          TopLeft="410,190" />
         <NodeLayout
           Size="164,42"
           Id="Package\Profil Wypożyczeń"
