@@ -28,4 +28,9 @@ SELECT
         WHEN MONTH(DateValue) IN (9, 10, 11) THEN 'Autumn'
     END AS season
 FROM DateCTE
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM Dim_Date d 
+    WHERE d.date_id = (YEAR(DateValue) * 10000 + MONTH(DateValue) * 100 + DAY(DateValue))
+)
 OPTION (MAXRECURSION 0);

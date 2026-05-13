@@ -23,5 +23,10 @@ SELECT
         ELSE 'Night'
     END
 FROM CalculatedTime
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM Dim_Time t 
+    WHERE t.time_id = (DATEPART(HOUR, ActualTime) * 100) + DATEPART(MINUTE, ActualTime)
+)
 OPTION (MAXRECURSION 1440);
 

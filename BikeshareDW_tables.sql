@@ -28,8 +28,9 @@ CREATE TABLE Dim_Time (
 
 CREATE TABLE Dim_Location (
     location_id INT IDENTITY(1,1) NOT NULL,
-    latitude FLOAT NULL,
-    longitude FLOAT NULL,
+    latitude DECIMAL(8, 5) NULL,
+    longitude DECIMAL(8, 5) NULL,
+    station_id INT NULL,
     station_name NVARCHAR(100) NULL,
     location_type NVARCHAR(20) NOT NULL,
     
@@ -37,7 +38,7 @@ CREATE TABLE Dim_Location (
 );
 
 CREATE TABLE Dim_Weather (
-    weather_id INT IDENTITY(1,1) NOT NULL,
+    weather_id INT NOT NULL,
     temperature_range NVARCHAR(10) NOT NULL,
     wind_speed_range NVARCHAR(10) NOT NULL,
     rain_range NVARCHAR(10) NOT NULL,
@@ -58,6 +59,7 @@ CREATE TABLE Dim_Rental_Profile (
 
 CREATE TABLE Fact_Rental (
     rental_id INT IDENTITY(1,1) NOT NULL,
+    ride_id CHAR(16),
 
     start_date_id INT NOT NULL,
     end_date_id INT NOT NULL,
@@ -75,6 +77,7 @@ CREATE TABLE Fact_Rental (
     distance FLOAT NOT NULL,
 
     CONSTRAINT PK_Fact_Rental PRIMARY KEY (rental_id),
+    CONSTRAINT UQ_Fact_Rental_RideID UNIQUE (ride_id),
 
     CONSTRAINT FK_Fact_StartDate FOREIGN KEY (start_date_id) REFERENCES Dim_Date(date_id),
     CONSTRAINT FK_Fact_EndDate FOREIGN KEY (end_date_id) REFERENCES Dim_Date(date_id),
