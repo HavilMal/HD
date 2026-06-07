@@ -10,9 +10,12 @@ CREATE TABLE Dim_Date (
     full_date DATE NOT NULL,
     [year] INT NOT NULL,
     [month] INT NOT NULL,
-    day_of_week NVARCHAR(20) NOT NULL,
+    month_name NVARCHAR(20) NOT NULL,
+    day_of_week INT NOT NULL,
+    day_of_week_name NVARCHAR(20) NOT NULL,
     day_type NVARCHAR(20) NOT NULL,
-    season NVARCHAR(20) NOT NULL,
+    season INT NOT NULL,
+    season_name NVARCHAR(20) NOT NULL,
     
     CONSTRAINT PK_Dim_Date PRIMARY KEY (date_id)
 );
@@ -21,7 +24,8 @@ CREATE TABLE Dim_Time (
     time_id INT NOT NULL,
     [hour] INT NOT NULL,
     [minute] INT NOT NULL,
-    part_of_day NVARCHAR(20) NOT NULL,
+    part_of_day INT NOT NULL,
+    part_of_day_name NVARCHAR(20) NOT NULL,
     
     CONSTRAINT PK_Dim_Time PRIMARY KEY (time_id)
 );
@@ -39,10 +43,15 @@ CREATE TABLE Dim_Location (
 
 CREATE TABLE Dim_Weather (
     weather_id INT NOT NULL,
+    temperature_range_number INT NOT NULL,
     temperature_range NVARCHAR(10) NOT NULL,
+    wind_speed_range_number INT NOT NULL,
     wind_speed_range NVARCHAR(10) NOT NULL,
+    rain_range_number INT NOT NULL,
     rain_range NVARCHAR(10) NOT NULL,
+    snowfall_range_number INT NOT NULL,
     snowfall_range NVARCHAR(10) NOT NULL,
+    snow_depth_range_number INT NOT NULL,
     snow_depth_range NVARCHAR(10) NOT NULL,
     
     CONSTRAINT PK_Dim_Weather PRIMARY KEY (weather_id)
@@ -91,3 +100,9 @@ CREATE TABLE Fact_Rental (
     CONSTRAINT FK_Fact_Weather FOREIGN KEY (weather_id) REFERENCES Dim_Weather(weather_id),
     CONSTRAINT FK_Fact_Rental_Profile FOREIGN KEY (profile_id) REFERENCES Dim_Rental_Profile(profile_id),
 );
+
+
+
+
+
+

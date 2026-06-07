@@ -7,20 +7,24 @@
       "RelativeMoniker": "D:0:0:{795432AC-DF46-0765-2C84-B1F611900511}|BikeshareDW\\BikeshareDW.dwproj|solutionrelative:BikeshareDW\\Bikeshare.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{795432AC-DF46-0765-2C84-B1F611900511}|BikeshareDW\\BikeshareDW.dwproj|C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Location.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{795432AC-DF46-0765-2C84-B1F611900511}|BikeshareDW\\BikeshareDW.dwproj|solutionrelative:BikeshareDW\\Dim Location.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{795432AC-DF46-0765-2C84-B1F611900511}|BikeshareDW\\BikeshareDW.dwproj|C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Bikeshare DW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
       "RelativeMoniker": "D:0:0:{795432AC-DF46-0765-2C84-B1F611900511}|BikeshareDW\\BikeshareDW.dwproj|solutionrelative:BikeshareDW\\Bikeshare DW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{795432AC-DF46-0765-2C84-B1F611900511}|BikeshareDW\\BikeshareDW.dwproj|C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Time.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{795432AC-DF46-0765-2C84-B1F611900511}|BikeshareDW\\BikeshareDW.dwproj|solutionrelative:BikeshareDW\\Dim Time.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+      "AbsoluteMoniker": "D:0:0:{795432AC-DF46-0765-2C84-B1F611900511}|BikeshareDW\\BikeshareDW.dwproj|C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Location.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{795432AC-DF46-0765-2C84-B1F611900511}|BikeshareDW\\BikeshareDW.dwproj|solutionrelative:BikeshareDW\\Dim Location.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     },
     {
       "AbsoluteMoniker": "D:0:0:{795432AC-DF46-0765-2C84-B1F611900511}|BikeshareDW\\BikeshareDW.dwproj|C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
       "RelativeMoniker": "D:0:0:{795432AC-DF46-0765-2C84-B1F611900511}|BikeshareDW\\BikeshareDW.dwproj|solutionrelative:BikeshareDW\\Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{795432AC-DF46-0765-2C84-B1F611900511}|BikeshareDW\\BikeshareDW.dwproj|C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Rental Profile.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{795432AC-DF46-0765-2C84-B1F611900511}|BikeshareDW\\BikeshareDW.dwproj|solutionrelative:BikeshareDW\\Dim Rental Profile.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{795432AC-DF46-0765-2C84-B1F611900511}|BikeshareDW\\BikeshareDW.dwproj|C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Time.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{795432AC-DF46-0765-2C84-B1F611900511}|BikeshareDW\\BikeshareDW.dwproj|solutionrelative:BikeshareDW\\Dim Time.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     },
     {
       "AbsoluteMoniker": "D:0:0:{795432AC-DF46-0765-2C84-B1F611900511}|BikeshareDW\\BikeshareDW.dwproj|C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Weather.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -45,8 +49,49 @@
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{c6f34f0d-7ae5-4f3a-be61-fe0c21ae9eb8}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dim Location.dim [Design]",
+              "DocumentMoniker": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Location.dim",
+              "RelativeDocumentMoniker": "BikeshareDW\\Dim Location.dim",
+              "ToolTip": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Location.dim [Design]",
+              "RelativeToolTip": "BikeshareDW\\Dim Location.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-06-05T17:10:09.274Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dim Date.dim [Design]",
+              "DocumentMoniker": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Date.dim",
+              "RelativeDocumentMoniker": "BikeshareDW\\Dim Date.dim",
+              "ToolTip": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Date.dim [Design]",
+              "RelativeToolTip": "BikeshareDW\\Dim Date.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-05-07T12:17:49.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Dim Time.dim [Design]",
+              "DocumentMoniker": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Time.dim",
+              "RelativeDocumentMoniker": "BikeshareDW\\Dim Time.dim",
+              "ToolTip": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Time.dim [Design]",
+              "RelativeToolTip": "BikeshareDW\\Dim Time.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-05-05T18:29:12.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Dim Weather.dim [Design]",
+              "DocumentMoniker": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Weather.dim",
+              "RelativeDocumentMoniker": "BikeshareDW\\Dim Weather.dim",
+              "ToolTip": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Weather.dim [Design]",
+              "RelativeToolTip": "BikeshareDW\\Dim Weather.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-05-05T18:09:38.585Z"
             },
             {
               "$type": "Document",
@@ -62,43 +107,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Dim Location.dim [Design]",
-              "DocumentMoniker": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Location.dim",
-              "RelativeDocumentMoniker": "BikeshareDW\\Dim Location.dim",
-              "ToolTip": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Location.dim [Design]",
-              "RelativeToolTip": "BikeshareDW\\Dim Location.dim [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-05-07T12:18:20.393Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Dim Date.dim [Design]",
-              "DocumentMoniker": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Date.dim",
-              "RelativeDocumentMoniker": "BikeshareDW\\Dim Date.dim",
-              "ToolTip": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Date.dim [Design]",
-              "RelativeToolTip": "BikeshareDW\\Dim Date.dim [Design]",
+              "Title": "Dim Rental Profile.dim [Design]",
+              "DocumentMoniker": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Rental Profile.dim",
+              "RelativeDocumentMoniker": "BikeshareDW\\Dim Rental Profile.dim",
+              "ToolTip": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Rental Profile.dim [Design]",
+              "RelativeToolTip": "BikeshareDW\\Dim Rental Profile.dim [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-05-07T12:17:49.522Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-05-14T16:34:36.725Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Dim Time.dim [Design]",
-              "DocumentMoniker": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Time.dim",
-              "RelativeDocumentMoniker": "BikeshareDW\\Dim Time.dim",
-              "ToolTip": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Time.dim [Design]",
-              "RelativeToolTip": "BikeshareDW\\Dim Time.dim [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-05-05T18:29:12.148Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Bikeshare DW.dsv [Design]",
               "DocumentMoniker": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Bikeshare DW.dsv",
               "RelativeDocumentMoniker": "BikeshareDW\\Bikeshare DW.dsv",
@@ -106,18 +126,6 @@
               "RelativeToolTip": "BikeshareDW\\Bikeshare DW.dsv [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2026-05-05T18:28:45.899Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Dim Weather.dim [Design]",
-              "DocumentMoniker": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Weather.dim",
-              "RelativeDocumentMoniker": "BikeshareDW\\Dim Weather.dim",
-              "ToolTip": "C:\\PWR\\HD\\BikeshareDW\\BikeshareDW\\Dim Weather.dim [Design]",
-              "RelativeToolTip": "BikeshareDW\\Dim Weather.dim [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-05-05T18:09:38.585Z",
               "EditorCaption": " [Design]"
             }
           ]

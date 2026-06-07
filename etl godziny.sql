@@ -9,11 +9,27 @@ CalculatedTime AS (
     SELECT DATEADD(MINUTE, MinuteOffset, CAST('00:00' AS TIME)) AS ActualTime
     FROM MinuteSequence
 )
-INSERT INTO Dim_Time (time_id, [hour], [minute], part_of_day)
+INSERT INTO Dim_Time (
+    time_id, 
+    [hour], 
+    [minute], 
+    part_of_day, 
+    part_of_day_name
+)
 SELECT 
     (DATEPART(HOUR, ActualTime) * 100) + DATEPART(MINUTE, ActualTime),
     DATEPART(HOUR, ActualTime),
     DATEPART(MINUTE, ActualTime),
+    
+    CASE 
+        WHEN DATEPART(HOUR, ActualTime) < 5  THEN 1 
+        WHEN DATEPART(HOUR, ActualTime) < 9  THEN 2 
+        WHEN DATEPART(HOUR, ActualTime) < 15 THEN 3 
+        WHEN DATEPART(HOUR, ActualTime) < 18 THEN 4 
+        WHEN DATEPART(HOUR, ActualTime) < 21 THEN 5
+        ELSE 1 
+    END,
+    
     CASE 
         WHEN DATEPART(HOUR, ActualTime) < 5  THEN 'Night'
         WHEN DATEPART(HOUR, ActualTime) < 9  THEN 'Morning Rush'
@@ -29,4 +45,3 @@ WHERE NOT EXISTS (
     WHERE t.time_id = (DATEPART(HOUR, ActualTime) * 100) + DATEPART(MINUTE, ActualTime)
 )
 OPTION (MAXRECURSION 1440);
-

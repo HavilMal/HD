@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Profile"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{1ADB265A-4E9D-4FE3-868C-587B2BDE34E3}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{015F8701-67A7-4C5D-B6FF-0CA5065B112C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -105,7 +105,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Profil Częstotliwości Użytkowania"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -174,7 +174,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Profil Pogody"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -311,7 +311,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Profil Stacji"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -370,16 +370,16 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Profil Wypożyczeń"
+      DTS:refId="Package\Profli Wypożyczeń"
       DTS:CreationName="Microsoft.DataProfilingTask"
       DTS:Description="Data Profiling Task"
       DTS:Disabled="True"
-      DTS:DTSID="{F38448BF-D517-4B78-9CE5-9EF03E818599}"
+      DTS:DTSID="{5C61186F-15D6-4265-9F5E-6E55E8A29C38}"
       DTS:ExecutableType="Microsoft.DataProfilingTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Profil Wypożyczeń"
+      DTS:ObjectName="Profli Wypożyczeń"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2025; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -395,31 +395,31 @@
     <Requests>
       <ColumnNullRatioProfileRequest ID="NullRatioReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table Schema="dbo" Table="daily_rent_detail" />
+        <Table Schema="dbo" Table="Wypożyczenia Poczekalnia" />
         <Column IsWildCard="true" />
       </ColumnNullRatioProfileRequest>
       <ColumnStatisticsProfileRequest ID="StatisticsReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table Schema="dbo" Table="daily_rent_detail" />
+        <Table Schema="dbo" Table="Wypożyczenia Poczekalnia" />
         <Column IsWildCard="true" />
       </ColumnStatisticsProfileRequest>
       <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table Schema="dbo" Table="daily_rent_detail" />
+        <Table Schema="dbo" Table="Wypożyczenia Poczekalnia" />
         <Column IsWildCard="true" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
       </ColumnLengthDistributionProfileRequest>
       <ColumnValueDistributionProfileRequest ID="ValueDistReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table Schema="dbo" Table="daily_rent_detail" />
+        <Table Schema="dbo" Table="Wypożyczenia Poczekalnia" />
         <Column IsWildCard="true" />
         <Option>FrequentValues</Option>
-        <FrequentValueThreshold>0.0001</FrequentValueThreshold>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
       </ColumnValueDistributionProfileRequest>
       <CandidateKeyProfileRequest ID="KeyReq">
         <DataSourceID>{6769C091-088B-4068-98B5-EC3B49762F01}</DataSourceID>
-        <Table Schema="dbo" Table="daily_rent_detail" />
+        <Table Schema="dbo" Table="Wypożyczenia Poczekalnia" />
         <KeyColumns>
           <Column IsWildCard="true" />
         </KeyColumns>
@@ -468,8 +468,8 @@
           TopLeft="410,190" />
         <NodeLayout
           Size="164,42"
-          Id="Package\Profil Wypożyczeń"
-          TopLeft="186,187" />
+          Id="Package\Profli Wypożyczeń"
+          TopLeft="168,187" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
